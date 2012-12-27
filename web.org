@@ -1,0 +1,5 @@
+* TODO Features Before Kickoff
+DEADLINE: <2013-01-05>
+1. [ ]Calendar
+2. [ ]Blog
+3. [ ]Attendance
