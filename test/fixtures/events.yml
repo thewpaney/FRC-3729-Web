@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  attendance: MyText
+  date: 2013-01-04 14:02:32
+
+two:
+  name: MyString
+  attendance: MyText
+  date: 2013-01-04 14:02:32
