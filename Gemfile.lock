@@ -38,6 +38,7 @@ GEM
       execjs
     coffee-script-source (1.4.0)
     erubis (2.7.0)
+    event-calendar (2.3.3)
     execjs (1.4.0)
       multi_json (~> 1.0)
     hike (1.2.1)
@@ -105,6 +106,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
+  event-calendar
   jquery-rails
   mysql2
   rails (= 3.2.9)

@@ -9,4 +9,6 @@ class Event < ActiveRecord::Base
   def to_s
     name
   end
+
+  has_event_calendar
 end
