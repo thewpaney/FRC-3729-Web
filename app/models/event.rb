@@ -1,8 +1,9 @@
 class Event < ActiveRecord::Base
-  attr_accessible :name, :date
+  attr_accessible :name, :start_at, :end_at
   serialize :attendance, Hash
   validates :name, presence: true
-  validates :date, presence: true
+  validates :start_at, presence: true
+  validates :end_at, presence: true
   # Attendees
   has_many :users
 
@@ -10,5 +11,5 @@ class Event < ActiveRecord::Base
     name
   end
 
-  has_event_calendar
+  # has_event_calendar # ?
 end
