@@ -3,3 +3,51 @@ DEADLINE: <2013-01-05>
 1. [ ]Calendar
 2. [ ]Blog
 3. [ ]Attendance
+   
+* Structure
+
+** Users
+We'll have to have a system of users and logging in for who has access 
+to our team's private stuff, like the calenders, who can write on the blog, 
+etc. 
+
+We could eventually make this pretty complicated, representing the actual 
+structure of our team, like leadership positions, team membership, and even 
+our voting for decisions or leaders. But let's stick with the basics first. 
+
+The following should be plenty for now
+- Name
+- email
+- password
+- credentials?
+  + Whether they can write on the blog, change the calender, change the wiki
+    administrate the website, etc. 
+
+** Events
+These will be shown by the calendar system
+(Right now, either later_dude or Calendarhelper)
+
+We'll need: 
+- A name
+- A location 
+  + We can later maybe have locations and stuff? 
+    Helping people find common places we go, e.g. 
+    Mahoney's, Regis, DU, etc
+- A Date
+
+*** Attendance
+Events each get the list of all the users we have,
+and we just make a checkbox interface on who is or isn't there.
+It's saved as part of the event
+
+And someone will have to have credentials to edit it.
+
+
+** Blog 
+Although eventually we'll want to be able to post videos or files,
+I think we keep it simple for now though.
+
+- User who wrote it
+- The body of text.
+
+We can work on things like commenting later.
