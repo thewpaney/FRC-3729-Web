@@ -1,0 +1,21 @@
+class ApplicationController < ActionController::Base
+  protect_from_forgery
+  helper_method :user, :user?
+  
+  def user
+    session[:user]
+  end
+
+  def user?
+    !user.nil?
+  end
+
+  def deauthenticate!
+    session[:user] = nil
+  end
+  
+    def authenticate! p
+    session[:user] = p.nil? ? nil : User.authenticate(p[:student_id].to_i, p[:login])
+    end
+    
+end

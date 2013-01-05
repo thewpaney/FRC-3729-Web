@@ -1,10 +1,7 @@
 <% content_for :page_title do %>
 Blog
 <% end %>
-
-<div style="whitespace:nowrap;">
-  <%= link_to 'Add Post', new_blog_post_path %>
-</div>
+<div style="whitespace:nowrap;"><h1>Blog</h1><%= link_to 'Add Post', new_blog_post_path %></div>
 
 <% @blog_posts.each do |blog_post| %>
 <div class=entry>

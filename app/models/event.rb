@@ -10,6 +10,5 @@ class Event < ActiveRecord::Base
   def to_s
     name
   end
-
-  # has_event_calendar # ?
+  has_event_calendar :start_at_field  => 'start_at', :end_at_field => 'end_at'
 end

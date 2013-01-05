@@ -1,7 +1,7 @@
 RjfrcWeb::Application.routes.draw do
   resources :events
   resources :blog_posts
-  match '/' => redirect("/blog")
+  match '/' => 'blog_posts#index'
   get '/blog' => 'blog_posts#index'
   get '/blog/new' => 'blog_posts#new'
   match '/blog(/:id)' => 'blog_posts#show'
