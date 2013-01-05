@@ -1,4 +1,5 @@
 class BlogPostsController < ApplicationController
+
   # GET /blog_posts
   # GET /blog_posts.json
   def index

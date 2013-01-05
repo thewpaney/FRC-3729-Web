@@ -17,9 +17,10 @@ Viewing Event
 
 <p>
   <b>Timeframe:</b>
-  <%= "#{@event.start_at} to #{@event.end_at}" %>
+  <%= "#{@event.start_at.to_s} to #{@event.end_at.to_s}" %>
 </p>
 
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<%= link_to 'Back', events_path %> |
+<%= link_to 'Calendar', events_path %>

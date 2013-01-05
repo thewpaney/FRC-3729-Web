@@ -17,10 +17,12 @@
 	<%= yield :page_title%>
       </div>
 
-
     </div>
-
-    <div>
+    <nav>
+      <%= link_to "Blog", :controller => "blog_posts", :action => "index" %> |      
+      <%= link_to "Calendar", :controller => "calendar", :action => "index" %> |
+    <nav>
+     <div>
       <%= yield %>
     </div>
     <div class="footer">

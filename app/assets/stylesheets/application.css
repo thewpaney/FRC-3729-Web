@@ -20,23 +20,28 @@
     text-align: center;
 }*/
 
-
 .header {
     white-space: no-wrap;
     background-color: red;
     background-position: left top;
-    color: white;
+    color: beige;
     font-family: Verdana, sans-serif;
-    font-size: 20px;
+    font-size: 40px;
     padding: 5px;
     margin: 0px;
-    height: .5cm;
+    height: 50px;
 }
+
 .left {
     whitespace: no-wrap;
     float: left;
+    margin-top: 10px;
+    margin-left: 10%;
 }
+
 .right {
     whitespace: no-wrap;
     float: right;
+    margin-top: 10px;    
+    margin-right: 10%;
 }
