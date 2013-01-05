@@ -1,0 +1,31 @@
+<h1>Sign Up</h1>
+
+<% if flash[:error] %>
+<p id="flash_error" style="color: #c41130;"><%= flash[:error] %></p>
+<% end %>
+
+<%= form_tag(:action => "new") do %>
+
+<label for="user_login">Username:</label><br/>
+<%= text_field("user", "login", :size => 25)%>
+<br /> <br />
+<label for="user_first">First Name:</label><br/>
+<%= text_field("user", "first", :size => 25)%>
+<br /> <br />
+<label for="user_last">Last Name:</label><br/>
+<%= text_field("user", "last", :size => 25)%>
+<br /> <br />
+<label for="user_pass1">Password:</label><br/>
+<%= password_field("user","pass1",:size => 25)%>
+<br /> <br />
+<label for="user_pass2">Confirm Password:</label><br/>
+<%= password_field("user","pass2",:size => 25)%>
+<br /> <br />
+<label for="user_email">E-Mail Address:</label><br/>
+<%= password_field("user","email",:size => 25)%>
+
+<br/><br/>
+
+<%= submit_tag("Continue") %>
+
+<% end %>

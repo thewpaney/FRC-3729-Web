@@ -6,12 +6,14 @@
     <td><h2><%= blog_post.title %></h2></td>
   </tr>
   <tr>
-    <td><%= blog_post.body %></td>
+    <td><%= blog_post.body.html_safe %></td>
   </tr>
   <tr>
     <td><%= link_to 'Permalink', blog_post %></td>
+    <% if !session[:user].nil? %>
     <td><%= link_to 'Edit', edit_blog_post_path(blog_post) %></td>
     <td><%= link_to 'Destroy', blog_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
   </tr>
   <br />
 <% end %>

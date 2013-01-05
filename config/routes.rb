@@ -1,9 +1,15 @@
 RjfrcWeb::Application.routes.draw do
   resources :blog_posts
+  # Users
+  get '/signup' => 'users#new'
+  post '/signup' => 'users#new'
+  get '/login' => 'users#login'
+  match '/users(/:id)' => 'users#show'
+  # Blog
   get '/blog' => 'blog_posts#index'
   get '/blog/new' => 'blog_posts#new'
   match '/blog(/:id)' => 'blog_posts#show'
-
+  # Calendar
   match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
 
   # The priority is based upon order of creation:
