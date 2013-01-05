@@ -1,0 +1,48 @@
+<h1>Sign Up</h1>
+
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited account from being created:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :login %><br />
+    <%= f.text_field :login %>
+  </div>
+  <div class="field">
+    <%= f.label "First Name" %><br />
+    <%= f.text_field :first %>
+  </div>
+  <div class="field">
+    <%= f.label "Last Name" %><br />
+    <%= f.text_field :last %>
+  </div>
+  <div class="field">
+    <%= f.label "Password" %><br />
+    <%= f.text_field :pass1 %>
+  </div>
+  <div class="field">
+    <%= f.label "Confirm Password" %><br />
+    <%= f.text_field :pass2 %>
+  </div>
+<!--<div class="field">
+    <%= f.label :credentials %><br />
+    <%= f.text_area :credentials %>
+  </div>-->
+  <div class="field">
+    <%= f.label "E-Mail Address" %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+

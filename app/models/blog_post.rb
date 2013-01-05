@@ -1,5 +1,5 @@
 class BlogPost < ActiveRecord::Base
-  attr_accessible :body, :title, :posterid
+  attr_accessible :body, :title
   validates :body, presence: true
   validates :title, presence: true
 

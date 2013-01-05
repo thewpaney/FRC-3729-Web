@@ -2,7 +2,7 @@
 <h1><%= @blog_post.title%></h1>
 
 <p>
-  <%= @blog_post.body %>
+  <%= @blog_post.body.html_safe %>
 </p>
 
 
