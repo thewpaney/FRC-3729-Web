@@ -1,5 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+<% content_for :page_title do %>
+Viewing Event
+<% end %>
+
+
 <p>
   <b>Name:</b>
   <%= @event.name %>
@@ -11,8 +16,8 @@
 </p>
 
 <p>
-  <b>Date:</b>
-  <%= @event.date %>
+  <b>Timeframe:</b>
+  <%= "#{@event.start_at} to #{@event.end_at}" %>
 </p>
 
 

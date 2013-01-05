@@ -1,5 +1,38 @@
-<h1>New event</h1>
+<% content_for :page_title do %>
+New Event
+<% end %>
 
-<%= render 'form' %>
+<h1>New event</h1>
+<%= form_for(@event) do |f| %>
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being created:</h2>
+
+      <ul>
+      <% @bevent.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label "Start date" %><br />
+    <%= f.date_select :start_at %>
+    <%= f.time_select :start_at, :ignore_date => true %>
+  </div>
+  <div class="field">
+    <%= f.label "End date" %><br />
+    <%= f.date_select :end_at %>
+    <%= f.time_select :end_at, :ignore_date => true %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
 
 <%= link_to 'Back', events_path %>
