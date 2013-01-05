@@ -30,13 +30,5 @@
     font-size: 20px;
     padding: 5px;
     margin: 0px;
-    height: .5cm;
-}
-.left {
-    whitespace: no-wrap;
-    float: left;
-}
-.right {
-    whitespace: no-wrap;
-    float: right;
+    text-align: left;
 }

@@ -1,25 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RJ FRC</title>
+    <title>RjfrcWeb</title>
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <div class="header">
-
-      <div class="left">
-	Regis Robotics
-      </div>
-      
-      <div class="right">
-	<%= yield :page_title%>
-      </div>
-
-
+    <div class=header>
+      Regis Robotics
+      <%= yield :page_title%>
     </div>
-
     <div>
       <%= yield %>
     </div>

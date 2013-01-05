@@ -1,7 +1,13 @@
-<h1>Blog</h1>
+<% content_for :page_title do %>
+Blog
+<% end %>
 
-<table>
+<div style="whitespace:nowrap;">
+  <%= link_to 'Add Post', new_blog_post_path %>
+</div>
+
 <% @blog_posts.each do |blog_post| %>
+<<<<<<< HEAD
   <tr>
     <td><h2><%= blog_post.title %></h2></td>
   </tr>
@@ -16,9 +22,25 @@
     <% end %>
   </tr>
   <br />
+=======
+<div class=entry>
+    <h2 class=title><%= blog_post.title %></h2>
+    <%= blog_post.body %>
+    <br/>    
+    <%= link_to 'Permalink', blog_post %>
+    <%= link_to 'Edit', edit_blog_post_path(blog_post) %>
+    <%= link_to 'Destroy', blog_post, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <br/>
+
+    <H3>By Me</H3>
+    
+    <br/>
+    <br/>
+</div>
+>>>>>>> 7582dabd58d56b549052868f6a07da4ceb3c5e66
 <% end %>
-</table>
+
 
 <br />
 
-<%= link_to 'New Blog post', new_blog_post_path %>
+

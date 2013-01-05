@@ -1,7 +1,6 @@
 class CalendarController < ApplicationController
   
   def index
-    redirect_to "/" unless false
     @month = (params[:month] || (Time.zone || Time).now.month).to_i
     @year = (params[:year] || (Time.zone || Time).now.year).to_i
 
