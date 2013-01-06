@@ -3,18 +3,26 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .entry {
-       font: bold 11px "Trebuchet MS", Verdana, Arial, Helvetica,sans-serif;
-       color: #6D929B;
+       font: bold 16px "Trebuchet MS", Verdana, Arial, Helvetica,sans-serif;
+       color: #686868 ;
        border-right: 1px solid #C1DAD7;
-       border-bottom: 3px solid Black;
+       border-bottom: 3px solid rgb(215,35,50);
        border-top: 1px solid #C1DAD7;
        letter-spacing: 2px;
-       text-transform: uppercase;
        text-align: left;
        padding: 6px 6px 6px 12px;
-       background: #CAE8EA url(images/bg_header.jpg) no-repeat;
+       background-color: #E8E8E8;
 }
 
 .title {
-border-bottom: 3px solid #C1DAD7;
+border-bottom: 3px solid Black;
+}
+.footer {
+    background: #E8E8E8 url(images/bg_header.jpg) no-repeat;
+    font: bold 11px "Trebuchet MS", Verdana, Arial, Helvetica,sans-serif;
+    color: #686868 ;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: left;
+    padding: 6px 6px 6px 12px;
 }
