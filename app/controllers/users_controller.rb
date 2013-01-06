@@ -51,7 +51,11 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(params[:user])
+    unless params[:pass1].to_s == params[:pass2].to_s
+      flash[:error] = "Passwords must match"
+      redirect_to action: 'new'
+    end
+    @user = User.create(params[:user])
 
     respond_to do |format|
       if @user.save
