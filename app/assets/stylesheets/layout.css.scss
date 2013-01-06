@@ -1,5 +1,9 @@
+$text_color: #686868;
+$regis_red: rgb(215,35,50);
+
 body {
     margin: 0 0 0 0;
+    background-color: $regis_red;
 }
 
 #content {
@@ -35,18 +39,19 @@ body {
 
     width: 13%;
     align: left;
-    position:absolute;
+    position: fixed;
     left: 0;
-    background-color: rgb(215,35,50);
-    height: 10000%;
+    background-color: $regis_red;
+    height: 100%;
 }
+
 li {
     color: white;
     font-size: 20px;
 }
 .header {
     white-space: no-wrap;
-    background-color: rgb(215,35,50);
+    background-color: $regis_red;
     background-position: left top;
     color: white;
     font-family: Verdana, sans-serif;

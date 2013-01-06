@@ -2,7 +2,7 @@
 Blog
 <% end %>
 
-<% @blog_posts.each do |blog_post| %>
+<% @blog_posts.reverse_each do |blog_post| %>
 <div class=entry>
     <h2 class=title><%= blog_post.title %></h2>
     <%= blog_post.body.html_safe %>

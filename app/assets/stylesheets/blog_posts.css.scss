@@ -2,9 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$regis_red: rgb(215,35,50);
+$text_color: #686868;
+
 .entry {
        font: bold 16px "Trebuchet MS", Verdana, Arial, Helvetica,sans-serif;
-       color: #686868 ;
+       color: $text_color;
        border-right: 1px solid #C1DAD7;
        border-bottom: 3px solid rgb(215,35,50);
        border-top: 1px solid #C1DAD7;
