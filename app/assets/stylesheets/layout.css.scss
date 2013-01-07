@@ -13,22 +13,6 @@ body {
 
 #side_bar {
 
-    a:link {
-	text-decoration:none;
-	color: white;}
-
-    a:visited {
-	text-decoration:none;
-	color:white;}
-
-    a:hover {
-	text-decoration:none;
-	color:white;}
-
-    a:active {
-	text-decoration:none;
-	color:white;}
-
     ul {
 	list-style-type: none;
 	margin-left: 0px;
@@ -42,13 +26,8 @@ body {
     align: left;
     position: fixed;
     left: 0;
-<<<<<<< HEAD
     background-color: $regis_red;
     height: 100%;
-=======
-    background-color: rgb(215,35,50);
-    height: auto;
->>>>>>> b25fecb8ada3cec8ed532abbd0b4f0dab73db5c7
 }
 
 li {

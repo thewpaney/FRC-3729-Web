@@ -15,11 +15,15 @@ $text_color: #686868;
        text-align: left;
        padding: 6px 6px 6px 12px;
        background-color: #E8E8E8;
+       a:link {
+	   color: black;
+       }
 }
 
 .title {
 border-bottom: 3px solid Black;
 }
+
 .footer {
     background: #E8E8E8 url(images/bg_header.jpg) no-repeat;
     font: bold 14px "Trebuchet MS", Verdana, Arial, Helvetica,sans-serif;

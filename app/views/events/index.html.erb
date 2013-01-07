@@ -16,10 +16,14 @@ Events
   <tr>
     <td><%= link_to event.name, event %></td>
     <td><%= event.attendance %></td>
-    <td><%= "#{event.start_at.to_formatted_s(:long_ordinal)} to #{event.end_at.to_formatted_s(:long_ordinal)}" %></td>
-    <td><%= link_to 'Edit', edit_event_path(event) %></td>
-    <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= "#{event.start_at.to_s(:pretty)} to </br> #{event.end_at.to_s(:pretty)}".html_safe %></td>
+    <td><%= link_to 'Edit', edit_event_path(event) %> </br>
+    <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>    
   </tr>
+    <td>&nbsp;</td>
+
+    </tr>
+
 <% end %>
 <tr><td><br /></td></tr>
 <tr><td><%= link_to 'New Event', new_event_path %></td></tr>
