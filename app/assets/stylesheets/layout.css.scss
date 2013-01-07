@@ -8,6 +8,7 @@ body {
 
 #content {
     margin-left: 13%;
+    spacing: 6px 6px 6px 6px;
 }
 
 #side_bar {
@@ -41,8 +42,13 @@ body {
     align: left;
     position: fixed;
     left: 0;
+<<<<<<< HEAD
     background-color: $regis_red;
     height: 100%;
+=======
+    background-color: rgb(215,35,50);
+    height: auto;
+>>>>>>> b25fecb8ada3cec8ed532abbd0b4f0dab73db5c7
 }
 
 li {

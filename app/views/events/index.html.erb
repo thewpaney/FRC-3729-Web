@@ -4,28 +4,25 @@ Events
 
 <h1>Listing events</h1>
 
-<table>
+<table class="entry">
   <tr>
     <th>Name</th>
     <th>Attendance</th>
-    <th>Date</th>
-    <th></th>
+    <th>Timeframe</th>
     <th></th>
     <th></th>
   </tr>
-
 <% @events.each do |event| %>
   <tr>
-    <td><%= event.name %></td>
+    <td><%= link_to event.name, event %></td>
     <td><%= event.attendance %></td>
-    <td><%= event.date %></td>
-    <td><%= link_to 'Show', event %></td>
+    <td><%= "#{event.start_at.to_formatted_s(:long_ordinal)} to #{event.end_at.to_formatted_s(:long_ordinal)}" %></td>
     <td><%= link_to 'Edit', edit_event_path(event) %></td>
     <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
+<tr><td><br /></td></tr>
+<tr><td><%= link_to 'New Event', new_event_path %></td></tr>
 </table>
 
 <br />
-
-<%= link_to 'New Event', new_event_path %>

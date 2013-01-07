@@ -1,6 +1,11 @@
-<h1>Editing blog_post</h1>
+<% content_for :page_title do %>
+Editing Post
+<% end %>
 
-<%= render 'form' %>
+<h1>Editing Post</h1>
+<div class="entry">
+  <%= render 'form' %>
 
-<%= link_to 'Show', @blog_post %> |
-<%= link_to 'Back', blog_posts_path %>
+  <%= link_to 'Back', @blog_post %> |
+  <%= link_to 'Live Blog', blog_posts_path %>
+</div>

@@ -4,10 +4,10 @@
 Viewing Event
 <% end %>
 
+<div class="entry">
 
 <p>
-  <b>Name:</b>
-  <%= @event.name %>
+  <h3><%= @event.name %></h3>
 </p>
 
 <p>
@@ -17,10 +17,12 @@ Viewing Event
 
 <p>
   <b>Timeframe:</b>
-  <%= "#{@event.start_at.to_s} to #{@event.end_at.to_s}" %>
+  <%= "#{@event.start_at.to_formatted_s(:long_ordinal)} to #{@event.end_at.to_formatted_s(:long_ordinal)}" %>
 </p>
 
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %> |
+<%= link_to 'List Events', events_path %> |
 <%= link_to 'Calendar', events_path %>
+
+</div>

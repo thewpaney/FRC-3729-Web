@@ -4,7 +4,7 @@ RjfrcWeb::Application.routes.draw do
 
   # Users
   get '/signup' => 'users#new'
-  post '/signup' => 'users#new'
+  post '/signup' => 'users#create'
   get '/login' => 'users#login'
   match '/users(/:id)' => 'users#show'
   # Blog
