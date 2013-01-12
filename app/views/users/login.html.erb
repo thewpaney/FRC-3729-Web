@@ -1,4 +1,7 @@
-<h1>Existing User: Login</h1>
+<% content_for :page_title do %>
+Login
+<% end %>
+<div class="bubble">
 <%= form_tag(:action => "login") do %>
 
 <label for="user_login">Username:</label><br/>
@@ -19,3 +22,4 @@
 <%= submit_tag("Login") %>
 
 <% end %>
+</div>

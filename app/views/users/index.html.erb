@@ -1,5 +1,8 @@
-<h1>Listing users</h1>
+<% content_for :page_title do %>
+Listing users
+<% end %>
 
+<div class="bubble">
 <table>
   <tr>
     <th>Name</th>
@@ -25,3 +28,4 @@
 <br />
 
 <%= link_to 'New User', new_user_path %>
+</div>
