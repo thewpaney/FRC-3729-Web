@@ -1,35 +1,37 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Login:</b>
-  <%= @user.login %>
-</p>
-
-<p>
-  <b>First:</b>
-  <%= @user.first %>
-</p>
-
-<p>
-  <b>Last:</b>
-  <%= @user.last %>
-</p>
-
-<p>
-  <b>Pass:</b>
-  <%= @user.pass %>
-</p>
-
-<p>
-  <b>Credentials:</b>
-  <%= @user.credentials %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @user.email %>
-</p>
+<% content_for :page_title do %>
+@user.first
+<% end %>
 
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<div class="bubble">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <b>Email:</b>
+    <%= @user.email %>
+  </p>
+
+    <b>First:</b>
+    <%= @user.first %>
+  </p>
+
+  <p>
+    <b>Last:</b>
+    <%= @user.last %>
+  </p>
+
+  <p>
+    <b>Pass:</b>
+    <%= @user.pass %>
+  </p>
+
+  <p>
+    <b>Credentials:</b>
+    <%= @user.credentials %>
+  </p>
+
+
+
+  <%= link_to 'Edit', edit_user_path(@user) %> |
+  <%= link_to 'Back', users_path %>
+</div>

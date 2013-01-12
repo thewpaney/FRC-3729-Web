@@ -1,17 +1,11 @@
 $text_color: #686868;
 $regis_red: rgb(215,35,50);
 $background_color: #E8E8E8;
+$border_gray: #C1DAD7;
 
 body {
     margin: 0 0 0 0;
-
     background-color: $regis_red;
-}
-#bar {
-    margin: 5px;
-    padding: 2px;
-    background-color: $background_color;
-    color: black;
 }
 
 #content {

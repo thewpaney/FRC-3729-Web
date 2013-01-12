@@ -1,24 +1,28 @@
-<h1>Sign Up</h1>
-
-<% if flash[:error] %>
-<p id="flash_error" style="color: #c41130;"><%= flash[:error] %></p>
+<% content_for :page_title do %>
+Sign Up
 <% end %>
 
-<%= form_tag(:action => "new") do %>
+<div class="bubble">
+  <% if flash[:error] %>
+  <p id="flash_error" style="color: #c41130;"><%= flash[:error] %></p>
+  <% end %>
 
-<label for="user_email">E-Mail Address:</label><br/>
-<%= text_field("user","email",:size => 25)%>
-<br /> <br />
-<label for="user_first">First Name:</label><br/>
-<%= text_field("user", "first", :size => 25)%>
-<br /> <br />
-<label for="user_last">Last Name:</label><br/>
-<%= text_field("user", "last", :size => 25)%>
-<br /> <br />
-<label for="user_pass">Password:</label><br/>
-<%= password_field("user","pass",:size => 25)%>
-<br /> <br />
+  <%= form_tag(:action => "new") do %>
 
-<%= submit_tag("Continue") %>
+  <label for="user_email">E-Mail Address:</label><br/>
+  <%= text_field("user","email",:size => 25)%>
+  <br /> <br />
+  <label for="user_first">First Name:</label><br/>
+  <%= text_field("user", "first", :size => 25)%>
+  <br /> <br />
+  <label for="user_last">Last Name:</label><br/>
+  <%= text_field("user", "last", :size => 25)%>
+  <br /> <br />
+  <label for="user_pass">Password:</label><br/>
+  <%= password_field("user","pass",:size => 25)%>
+  <br /> <br />
 
-<% end %>
+  <%= submit_tag("Continue") %>
+
+  <% end %>
+</div>
