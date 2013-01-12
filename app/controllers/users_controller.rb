@@ -24,11 +24,6 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @user }
-    end
   end
 
   # GET /users/new
@@ -50,21 +45,29 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    unless params[:pass1].to_s == params[:pass2].to_s
-      flash[:error] = "Passwords must match"
-      redirect_to action: 'new'
-    end
-    @user = User.create(params[:user])
+    # unless params[:pass1].to_s == params[:pass2].to_s
+    #   flash[:error] = "Passwords must match"
+    #   redirect_to action: 'new'
+    # end
+    @user = User.new(params[:user])
 
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render json: @user, status: :created, location: @user }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    if @user.save
+      flash[:message] = "User successfully created!"
+      redirect_to @user
+    else
+      flash[:error] = "Could not create user."
+      redirect_to '/users/new'
     end
+
+    # respond_to do |format|
+    #   if @user.save
+    #     format.html { redirect_to @user, notice: 'User was successfully created.' }
+    #     format.json { render json: @user, status: :created, location: @user }
+    #   else
+    #     format.html { render action: "new" }
+    #     format.json { render json: @user.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PUT /users/1
