@@ -2,12 +2,9 @@
 
 <table>
   <tr>
-    <th>Login</th>
-    <th>First</th>
-    <th>Last</th>
-    <th>Pass</th>
-    <th>Credentials</th>
+    <th>Name</th>
     <th>Email</th>
+    <th>Credentials</th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,12 +12,9 @@
 
 <% @users.each do |user| %>
   <tr>
-    <td><%= user.login %></td>
-    <td><%= user.first %></td>
-    <td><%= user.last %></td>
-    <td><%= user.pass %></td>
-    <td><%= user.credentials %></td>
+    <td><%= "#{user.first} #{user.last}" %></td>
     <td><%= user.email %></td>
+    <td><%= user.credentials %></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
