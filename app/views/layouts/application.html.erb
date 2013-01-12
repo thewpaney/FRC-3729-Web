@@ -37,7 +37,13 @@
     <div id="content">
 
       <div id="bar">
-	<%= link_to "Sign In", :controller => "users", :action => "new" %>
+	<% if session[:user].nil? %>
+	<%= link_to "Sign In", "/login" %>
+	<%= link_to "Sign Up", :controller => "users", :action => "new" %>
+	<% else %>
+	<%= "Logged in as #{session[:user].first} #{session[:user].last}" %>
+	<%= link_to 'Sign Out', :controller => "users", :action => "logout" %>
+	<% end %>
       </div>
       
       <%= yield %>

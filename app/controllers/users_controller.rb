@@ -94,4 +94,16 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def logout
+    unless session[:user].nil?
+      session[:user] = nil
+      flash[:message] = 'Successfully logged out.'
+    else
+      flash[:error] = "You're not currently logged in!"
+    end
+    redirect_to '/blog'
+  end
+  
+
 end

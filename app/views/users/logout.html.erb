@@ -1,0 +1,21 @@
+<h1>Logging Out...</h1>
+<%= form_tag(:action => "login") do %>
+
+<label for="user_login">Username:</label><br/>
+
+<%= text_field("user", "login", :size => 25)%>
+<% if flash[:error] %>
+<p id="flash_error" style="color: #c41130;"><%= flash[:error] %></p>
+<% else %>
+<br /><br /><br />
+<% end %>
+
+<label for="user_pass">Password:</label><br/>
+
+<%= password_field("user","pass",:size => 25)%>
+
+<br/><br/>
+
+<%= submit_tag("Login") %>
+
+<% end %>

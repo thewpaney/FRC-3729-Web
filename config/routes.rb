@@ -8,6 +8,7 @@ RjfrcWeb::Application.routes.draw do
   post '/signup' => 'users#create'
   get '/login' => 'users#login'
   post '/login' => 'users#login'
+  get '/logout' => 'users#logout'
   match '/users(/:id)' => 'users#show'
   # Blog
   match '/' => redirect("/blog")  
