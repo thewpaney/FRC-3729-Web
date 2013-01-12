@@ -1,9 +1,17 @@
 $text_color: #686868;
 $regis_red: rgb(215,35,50);
+$background_color: #E8E8E8;
 
 body {
     margin: 0 0 0 0;
+
     background-color: $regis_red;
+}
+#bar {
+    margin: 5px;
+    padding: 2px;
+    background-color: $background_color;
+    color: black;
 }
 
 #content {
@@ -12,14 +20,14 @@ body {
 }
 
 #side_bar {
-
+    margin-left: -25px;
     ul {
 	list-style-type: none;
 	margin-left: 0px;
        }
 
     li {
-	margin-top:9px;
+	margin-top:10px;
        }
 
     width: 13%;
@@ -34,6 +42,7 @@ li {
     color: white;
     font-size: 20px;
 }
+
 .header {
     white-space: no-wrap;
     background-color: $regis_red;
@@ -44,6 +53,7 @@ li {
     padding: 5px;
     margin: 0px;
     height: 50px;
+    width: 100%;
 }
 
 .left {

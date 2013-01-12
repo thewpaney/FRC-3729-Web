@@ -2,28 +2,29 @@
 Blog
 <% end %>
 
+<div id="index">
+  <% @blog_posts.reverse.each do |blog_post| %>
+  <div class="entry">
+    <h2 class=title><%= blog_post.title %></h2>
+    <%= blog_post.body.html_safe %>
+    <br/>    
+    <%= link_to 'Permalink', blog_post %>
+    <%= link_to 'Edit', edit_blog_post_path(blog_post) %>
+    <%= link_to 'Destroy', blog_post, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <br/>
+    
+    <h3>Me?</h3>
+    
+    <br/>
+    <br/>
+  </div>
+  <% end %>
 
-<% @blog_posts.reverse.each do |blog_post| %>
-<div class="entry">
-  <h2 class=title><%= blog_post.title %></h2>
-  <%= blog_post.body.html_safe %>
-  <br/>    
-  <%= link_to 'Permalink', blog_post %>
-  <%= link_to 'Edit', edit_blog_post_path(blog_post) %>
-  <%= link_to 'Destroy', blog_post, method: :delete, data: { confirm: 'Are you sure?' } %>
-  <br/>
-  
-  <h3>Me?</h3>
-  
-  <br/>
-  <br/>
-</div>
-<% end %>
-
-<div class="footer">
-  <br />
-  <center>
-    <%= image_tag '/assets/rails.png' %>
-  </center>
-  <br />
+  <div class="footer">
+    <br />
+    <center>
+      <%= image_tag '/assets/rails.png' %>
+    </center>
+    <br />
+  </div>
 </div>

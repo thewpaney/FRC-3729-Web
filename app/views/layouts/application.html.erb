@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
   <head>
     <title>RJ FRC</title>
@@ -17,8 +17,8 @@
       <div class="right">
 	<%= yield :page_title%>
       </div>
-
     </div>
+    
     <div id="side_bar">
       <nav>
 
@@ -33,7 +33,13 @@
 	</ul>
       </nav>
       </div>
+
     <div id="content">
+
+      <div id="bar">
+	<%= link_to "Sign In", :controller => "users", :action => "new" %>
+      </div>
+      
       <%= yield %>
     </div>
     <div class="footer">

@@ -4,17 +4,26 @@
 
 $regis_red: rgb(215,35,50);
 $text_color: #686868;
+$border_gray: #C1DAD7;
+$background_color: #E8E8E8;
 
 .entry {
        font: bold 16px "Trebuchet MS", Verdana, Arial, Helvetica,sans-serif;
        color: $text_color;
-       border-right: 1px solid #C1DAD7;
-       border-bottom: 3px solid rgb(215,35,50);
-       border-top: 1px solid #C1DAD7;
        letter-spacing: 2px;
        text-align: left;
        padding: 6px 6px 6px 12px;
-       background-color: #E8E8E8;
+       background-color: background_color;
+       margin-right: 5%;
+
+       /*Roundness!*/
+       -webkit-border-radius: 20px;
+       -moz-border-radius: 20px;
+       border-radius: 20px;
+
+       /*Shadow!*/
+       margin-top: 5px;
+
        a:link {
 	   color: black;
        }
@@ -25,11 +34,17 @@ border-bottom: 3px solid Black;
 }
 
 .footer {
-    background: #E8E8E8 url(images/bg_header.jpg) no-repeat;
+    background: #background_color url(images/bg_header.jpg) no-repeat;
     font: bold 14px "Trebuchet MS", Verdana, Arial, Helvetica,sans-serif;
-    color: #686868 ;
+    color: $text_color ;
     letter-spacing: 2px;
     text-transform: uppercase;
     text-align: left;
-//    padding: 6px 6px 6px 12px;
+    margin-right: 5%;
+    -webkit-border-top-left-radius: 20px;
+    -webkit-border-top-right-radius: 20px;
+    -moz-border-radius-topleft: 20px;
+    -moz-border-radius-topright: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
