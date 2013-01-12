@@ -2,6 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+$text_color: #686868;
+$regis_red: rgb(215,35,50);
+$background_color: #E8E8E8;
+$border_gray: #C1DAD7;
+
 .entry {
        font: bold 16px "Trebuchet MS", Verdana, Arial, Helvetica,sans-serif;
        color: #686868 ;
@@ -13,7 +19,6 @@
        padding: 6px 6px 6px 12px;
        background-color: #E8E8E8;
 }
-
 
 .title {
 border-bottom: 3px solid Black;
