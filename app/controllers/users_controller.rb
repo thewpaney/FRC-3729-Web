@@ -3,8 +3,7 @@ class UsersController < ApplicationController
   def login
     self.authenticate! params[:user]
     if !session[:user].nil?
-      flash[:message]  = "You're logged in as #{user.name}."
-      redirect_to action: "blog_posts"
+      flash[:message]  = "You're logged in as #{session[:user].first} #{session[:user].last}."
     elsif request.post?
       flash[:error] = "Login failed."
     end
@@ -96,4 +95,16 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def logout
+    unless session[:user].nil?
+      session[:user] = nil
+      flash[:message] = 'Successfully logged out.'
+    else
+      flash[:error] = "You're not currently logged in!"
+    end
+    redirect_to '/blog'
+  end
+  
+
 end
