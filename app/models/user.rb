@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   serialize :credentials, Hash
   
   def self.authenticate(login, pass)
-    where(pass: pass, login: login.downcase).first
+    where(pass: pass, email: login.downcase).first
   end
 
   # def create(params)

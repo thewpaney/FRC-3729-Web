@@ -3,8 +3,7 @@ class UsersController < ApplicationController
   def login
     self.authenticate! params[:user]
     if !session[:user].nil?
-      flash[:message]  = "You're logged in as #{user.name}."
-      redirect_to action: "blog_posts"
+      flash[:message]  = "You're logged in as #{session[:user].first} #{session[:user].last}."
     elsif request.post?
       flash[:error] = "Login failed."
     end
