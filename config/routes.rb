@@ -1,6 +1,7 @@
 RjfrcWeb::Application.routes.draw do
   resources :events
   resources :blog_posts
+  resources :users
 
   # Users
   get '/signup' => 'users#new'
