@@ -21,17 +21,20 @@
   </p>
 
   <p>
-    <b>Pass:</b>
-    <%= @user.pass %>
+    <b>Credentials:</b>
+    <%= @user.nice_credentials %>
   </p>
+
+  <% unless session[:user].nil? %>
+  <% if session[:user].admin? %>
 
   <p>
-    <b>Credentials:</b>
-    <%= @user.credentials %>
-  </p>
+    <b>Password</b>
+    <%= @user.pass %>
+  <p>
 
-
-
-  <%= link_to 'Edit', edit_user_path(@user) %> |
+  <%= link_to 'Edit', edit_user_path(@user) %> | 
+  <% end %>
+  <% end %>
   <%= link_to 'Back', users_path %>
 </div>
