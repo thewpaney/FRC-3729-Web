@@ -19,3 +19,6 @@
 /tmp
 
 vendor
+
+# Differs from machine to machine
+/config/database.yml
