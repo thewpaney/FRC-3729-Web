@@ -44,6 +44,15 @@
 	<%= "Logged in as #{session[:user].first} #{session[:user].last}" %> |
 	<%= link_to 'Sign Out', :controller => "users", :action => "logout" %>
 	<% end %>
+	<% if !session[:user].nil? and session[:user].member? %>
+	<div id="admin-bar">
+	  <%= yield :admin_bar %> | 
+	  <%= link_to 'Users', '/users' %>
+	  <% if session[:user].admin? %>
+	  <%= link_to 'Admin', '/admin' %>
+	  <% end %>
+	</div>
+	<% end %>
 	<br />
       </div>
       <br />

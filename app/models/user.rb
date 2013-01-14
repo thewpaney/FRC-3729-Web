@@ -12,6 +12,10 @@ class User < ActiveRecord::Base
     (self.credentials.has_key?(:master) and self.credentials[:master]) or (self.credentials.has_key?(:admin) and self.credentials[:admin])
   end
 
+  def member?
+    self.credentials.has_key?(:member) and self.credentials[:member]
+  end
+
   def nice_credentials
     "#{credentials.collect {|c, v| v ? c : nil}.delete_if {|c| c.nil? }.join(', ')}"
   end
