@@ -8,7 +8,7 @@ development:
   encoding: utf8
   database: rjfrc_development
   username: root
-  password: uberl33tnessdolphins
+  password: letmein
   host: localhost
   port: 3306
 
@@ -20,7 +20,7 @@ test:
   encoding: utf8
   database: rjfrc_test
   username: root
-  password: uberl33tnessdolphins
+  password: letmein
   host: localhost
   port: 3306
 
@@ -29,6 +29,6 @@ production:
   encoding: utf8
   database: rjfrc_production
   username: root
-  password: uberl33tnessdolphins
+  password: letmein
   host: localhost
   port: 3306
