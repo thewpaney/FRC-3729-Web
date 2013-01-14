@@ -3,17 +3,62 @@ $regis_red: rgb(215,35,50);
 $background_color: #E8E8E8;
 $border_gray: #C1DAD7;
 
-body {
+body {    
     margin: 0 0 0 0;
     background-color: $regis_red;
 }
 
 #content {
+    a:link {
+	color: #222222;
+	text-decoration: none;	
+    }
+    a:visited {
+	color: #222222;
+    }
+    a:hover {
+	color: #666666;
+	text-decoration:underline;
+    }
+
     margin-left: 13%;
     spacing: 6px 6px 6px 6px;
 }
 
+#nav-bar {
+    color: #222222;
+    background-color: $background-color;
+    padding: 3px 0px 6px 12px;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    margin-right: 5%;
+    a:link {
+	color: #222222;
+	text-decoration: none;
+    }
+    a:visited {
+	color: #222222;
+    }
+    a:hover {
+	color: #666666;
+	text-decoration: underline;
+    }
+}
+
 #side_bar {
+    a:link {
+	color: white;
+	text-decoration: none;	
+    }
+    a:visited {
+	color: white;
+    }
+    a:hover {
+	color: white;
+	text-decoration:underline;
+    }
+
     margin-left: -25px;
     ul {
 	list-style-type: none;
