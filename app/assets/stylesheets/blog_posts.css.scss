@@ -7,30 +7,15 @@ $text_color: #686868;
 $border_gray: #C1DAD7;
 $background_color: #E8E8E8;
 
-.entry {
-       font: bold 16px "Trebuchet MS", Verdana, Arial, Helvetica,sans-serif;
-       color: $text_color;
-       letter-spacing: 2px;
-       text-align: left;
-       padding: 6px 6px 6px 12px;
-       background-color: background_color;
-       margin-right: 5%;
-
-       /*Roundness!*/
-       -webkit-border-radius: 20px;
-       -moz-border-radius: 20px;
-       border-radius: 20px;
-
-       a:link {
-	   color: black;
-       }
+.bubble {
 }
 
 .title {
-border-bottom: 3px solid Black;
+    border-bottom: 3px solid Black;
 }
 
 .footer {
+    margin-top: 1em;
     background: #background_color url(images/bg_header.jpg) no-repeat;
     font: bold 14px "Trebuchet MS", Verdana, Arial, Helvetica,sans-serif;
     color: $text_color ;

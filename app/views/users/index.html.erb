@@ -17,10 +17,12 @@ Listing users
   <tr>
     <td><%= "#{user.first} #{user.last}" %></td>
     <td><%= user.email %></td>
-    <td><%= user.credentials %></td>
+    <td><%= user.nice_credentials %></td>
     <td><%= link_to 'Show', user %></td>
+    <% if !session[:user].nil? and session[:user].admin? %>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>

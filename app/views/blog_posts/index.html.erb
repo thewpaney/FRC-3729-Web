@@ -2,18 +2,23 @@
 Blog
 <% end %>
 
+<% content_for :admin_bar do %>
+
+<% end %>
+
 <div id="index">
   <% @blog_posts.reverse.each do |blog_post| %>
   <div class="entry">
-    <h2 class=title><%= blog_post.title %></h2>
+    <h2 class="title"><%= blog_post.title %></h2>
     <%= blog_post.body.html_safe %>
-    <br/>    
+    <br />
+    <br />
     <%= link_to 'Permalink', blog_post %>
     <%= link_to 'Edit', edit_blog_post_path(blog_post) %>
     <%= link_to 'Destroy', blog_post, method: :delete, data: { confirm: 'Are you sure?' } %>
     <br/>
-    
-    <h3>Me?</h3>
+    <br />
+    Posted by (poster name) on <%= blog_post.created_at.to_formatted_s(:short) %>
     
     <br/>
     <br/>
@@ -23,6 +28,8 @@ Blog
   <div class="footer">
     <br />
     <center>
+      Powered By
+      <br />
       <%= image_tag '/assets/rails.png' %>
     </center>
     <br />

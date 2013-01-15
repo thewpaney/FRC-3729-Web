@@ -12,9 +12,15 @@ $border_gray: #C1DAD7;
     padding: 6px 6px 6px 12px;
     background-color: $background_color;
     margin-right: 5%;
+    margin-top: 1em;
     
     /*Roundness!*/
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px;
+
+    a:link {
+	color: black;
+    }
+
 }

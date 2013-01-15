@@ -20,8 +20,9 @@ RjfrcWeb::Application.routes.draw do
   get '/blog/new' => 'blog_posts#new'
   match '/blog(/:id)' => 'blog_posts#show'
   # Calendar
-
   match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
+  # Admin
+  get '/admin' => 'admin#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

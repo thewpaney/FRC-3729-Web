@@ -34,22 +34,33 @@
       </nav>
       </div>
 
-
     <div id="content">
 
-      <div id="bar">
+      <div id="nav-bar">
 	<% if session[:user].nil? %>
 	<%= link_to "Sign In", "/login" %>
 	<%= link_to "Sign Up", :controller => "users", :action => "new" %>
 	<% else %>
-	<%= "Logged in as #{session[:user].first} #{session[:user].last}" %>
+	<%= "Logged in as #{session[:user].first} #{session[:user].last}" %> |
 	<%= link_to 'Sign Out', :controller => "users", :action => "logout" %>
 	<% end %>
+	<% if !session[:user].nil? and session[:user].member? %>
+	<div id="admin-bar">
+	  <%= yield :admin_bar %> | 
+	  <%= link_to 'Users', '/users' %>
+	  <% if session[:user].admin? %>
+	  <%= link_to 'Admin', '/admin' %>
+	  <% end %>
+	</div>
+	<% end %>
+	<br />
       </div>
+      <br />
       
       <%= yield %>
     </div>
     <div class="footer">
-      
+
+    </div>
   </body>
-</html>
+</Html>

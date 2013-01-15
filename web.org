@@ -1,11 +1,4 @@
-* TODO Features Before Kickoff
-DEADLINE: <2013-01-05>
-1. [ ]Calendar
-2. [ ]Blog
-3. [ ]Attendance
-   
 * Structure
-
 ** Users
 We'll have to have a system of users and logging in for who has access 
 to our team's private stuff, like the calenders, who can write on the blog, 
@@ -21,7 +14,8 @@ The following should be plenty for now
 - password
 - credentials?
   + Whether they can write on the blog, change the calender, change the wiki
-    administrate the website, etc. 
+    administrate the website, etc.
+- Location for rides and finding places?
 
 ** Events
 These will be shown by the calendar system
@@ -42,7 +36,6 @@ It's saved as part of the event
 
 And someone will have to have credentials to edit it.
 
-
 ** Blog 
 Although eventually we'll want to be able to post videos or files,
 I think we keep it simple for now though.
@@ -51,3 +44,21 @@ I think we keep it simple for now though.
 - The body of text.
 
 We can work on things like commenting later.
+** Wiki
+- Information specifically on the way our team sees the robotics things
+- Use gem gollum
+** Calendar
+- Difference between Events and meetings? 
+** Issue Tracking
+- Need a title, ability to update/comments
+  + Have subtasks?
+- Way to show duedates on calendar but different
+- Notes
+** Emails
+-Fewer and more information
+-Regularl interval
+-Subscribing to events
+-Send to a person and have them approve
+-recieve mail
+
+** Quiz/Vote System
