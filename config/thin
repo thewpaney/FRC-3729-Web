@@ -1,0 +1,41 @@
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          thin
+# Required-Start:    $local_fs $remote_fs
+# Required-Stop:     $local_fs $remote_fs
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: thin initscript
+# Description:       thin
+### END INIT INFO
+
+# Original author: Forrest Robertson
+
+# Do NOT "set -e"
+
+DAEMON=/usr/bin/thin
+
+# Exit if the package is not installed
+[ -x "$DAEMON" ] || exit 0
+
+case "$1" in
+    start)
+	$DAEMON start -s3 --socket /tmp/thin.sock
+	;;
+    stop)
+	killall `basename $DAEMON`
+	;;
+    restart|force-reload|reload)
+	killall `basename $DAEMON`
+	$DAEMON start -s3 --socket /tmp/thin.sock
+	;;
+    check)
+	ps aux | grep -v grep | grep "/tmp/thin"
+	;;
+    *)
+	echo "Usage: $0 {start|stop|restart}" >&2
+	exit 3
+	;;
+esac
+
+:

@@ -8,7 +8,7 @@ Blog
 
 <div id="index">
   <% @blog_posts.reverse.each do |blog_post| %>
-  <div class="entry">
+  <div class="bubble">
     <h2 class="title"><%= blog_post.title %></h2>
     <%= blog_post.body.html_safe %>
     <br />

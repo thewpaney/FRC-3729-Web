@@ -8,11 +8,29 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
+    <div id="beta_banner">
+      <table>
+	<tr>
+	  <td>
+	<%= link_to image_tag("Matt and Drew.jpg", :height => 115, :width => 115), "/" %>
+	  </td>
+	  <td>
+	    <h2>
+	Hi. This website is in beta right now. If you have any problems, questions, ideas,</br> concerns, jokes, or movie recommendations, click the picture to let us know.
+	</h2>
+	  </td>
+
+	</tr>
+      </table>
+
+    </div>      
     <div class="header">
 
       <div class="left">
+
 	Regis Robotics
       </div>
+
       
       <div class="right">
 	<%= yield :page_title%>
@@ -21,16 +39,13 @@
     
     <div id="side_bar">
       <nav>
-
 	<ul>
-
 	  <li><%= link_to "Blog", :controller => "blog_posts", :action => "index" %> </li>
-
 	  <li><%= link_to "Calendar", :controller => "calendar", :action => "index" %></li>
 	  <li>Wiki</li>
 	  <li>Git</li>
-
 	</ul>
+
       </nav>
       </div>
 
