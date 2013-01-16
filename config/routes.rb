@@ -5,6 +5,7 @@ RjfrcWeb::Application.routes.draw do
 
   #Sliders
   match '/slider1' => 'slider1#index'
+  match '/slider2' => 'slider2#index'
   # Users
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
