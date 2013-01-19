@@ -29,7 +29,7 @@
   padding: 5px 0;
   width: 100%;
   table-layout: fixed;
-  color: white;
+  color: black;
 }
 
 .ec-month-name {
@@ -38,7 +38,7 @@
 }
 
 .ec-month-nav {
-    color: white;
+    color: black;
 }
 
 /* Containers */
@@ -215,15 +215,16 @@ a.ec-day-link {
 .ec-left-arrow {
   margin-left: -7px;
   margin-right: auto;
-  border-right: 4px solid white;
-  color: white;
+  border-right: 4px solid black;
+  color: black;
+
 }
 
 .ec-right-arrow {
   margin-left: auto;
   margin-right: 3px;
-  border-left: 4px solid white;
-  color: white;  
+  border-left: 4px solid black;
+  color: black;  
 }
 
 /* remove this to not have a bullet */
