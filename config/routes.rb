@@ -1,4 +1,7 @@
 RjfrcWeb::Application.routes.draw do
+  resources :issues
+
+
   resources :events
   resources :blog_posts
   resources :users
