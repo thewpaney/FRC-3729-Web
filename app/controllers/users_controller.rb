@@ -52,6 +52,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
 
     if @user.save
+      TeamMailer.welcome_email(@user).deliver
       flash[:message] = "User successfully created!"
       redirect_to @user
     else

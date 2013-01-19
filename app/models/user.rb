@@ -17,7 +17,8 @@ class User < ActiveRecord::Base
   end
 
   def nice_credentials
-    "#{credentials.collect {|c, v| v ? c : nil}.delete_if {|c| c.nil? }.join(', ')}"
+    c = "#{credentials.collect {|c, v| v ? c : nil}.delete_if {|c| c.nil? }.join(', ')}"
+    c == "" ? "None!" : c
   end
   
   belongs_to :blog_post
