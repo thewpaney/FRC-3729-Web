@@ -23,7 +23,9 @@ case "$1" in
 	$DAEMON start -s3 --socket /tmp/thin.sock
 	;;
     stop)
-	killall `basename $DAEMON`
+	kill `cat tmp/pids/thin.0.pid`
+	kill `cat tmp/pids/thin.1.pid`
+	kill `cat tmp/pids/thin.2.pid`
 	;;
     restart|force-reload|reload)
 	killall `basename $DAEMON`
@@ -33,7 +35,7 @@ case "$1" in
 	ps aux | grep -v grep | grep "/tmp/thin"
 	;;
     *)
-	echo "Usage: $0 {start|stop|restart}" >&2
+	echo "Usage: $0 {start|stop|restart|check}" >&2
 	exit 3
 	;;
 esac
