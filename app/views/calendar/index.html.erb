@@ -2,6 +2,10 @@
 Calendar
 <% end %>
 
+<%= content_for :admin_bar do %>
+<%= link_to 'New Event', new_event_path %>
+<% end %>
+
 <%= stylesheet_link_tag "event_calendar" %>
 <%= javascript_include_tag "event_calendar" %>
 
