@@ -10,7 +10,8 @@
 # Emacs backups
 *~
 .*~
-
+\#*
+.\#*
 # Ignore the default SQLite database.
 /db/*.sqlite3
 
