@@ -2,9 +2,11 @@
 
 <b>Issue <%= @issue.id %></b>
 
+<div class="bubble">
 <p>
   <%= @issue.description %>
 </p>
+</div>
 
 
 <%= link_to 'Edit', edit_issue_path(@issue) %> |

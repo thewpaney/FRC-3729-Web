@@ -62,7 +62,7 @@
 	<%= link_to 'Sign Out', :controller => "users", :action => "logout" %>
 	<% end %>
 	<% if !session[:user].nil? and session[:user].member? %>
-	<div id="admin-bar">
+	<div id="admin-bar" class="right">
 	  <%= yield :admin_bar %> | 
 	  <%= link_to 'Users', '/users' %>
 	  <% if session[:user].admin? %>

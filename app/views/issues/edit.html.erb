@@ -1,5 +1,6 @@
 <h1>Editing issue</h1>
 
+<div class="bubble">
 <%= form_for(@issue) do |f| %>
   <% if @issue.errors.any? %>
     <div id="error_explanation">
@@ -31,6 +32,8 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+</div>
 
 <%= link_to 'Show', @issue %> |
 <%= link_to 'Back', issues_path %>
