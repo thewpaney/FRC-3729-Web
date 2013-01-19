@@ -1,4 +1,4 @@
-<h1>New issue</h1>
+<h1>New Issue</h1>
 
 <%= form_for(@issue) do |f| %>
   <% if @issue.errors.any? %>
@@ -13,9 +13,17 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+  <div class="text">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="text">
+    <%= f.label "Parent Task" %>
+    <% if Issue.all == [] %>
+    No other tasks!
+    <% else %>
+    <%= select("event", "id", Issue.all.sort {|a, b|  a.id <=> b.id }.collect {|e| [ "Issue #{e.id}", e.id ] }, { :include_blank => true } ) %>
+    <% end %>
   </div>
   <div class="actions">
     <%= f.submit %>

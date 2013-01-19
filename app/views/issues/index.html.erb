@@ -3,6 +3,7 @@
 <table>
   <tr>
     <th>Name</th>
+    <th>Parent</th>
     <th></th>
     <th></th>
     <th></th>
@@ -10,7 +11,8 @@
 
 <% @issues.each do |issue| %>
   <tr>
-    <td><%= issue.name %></td>
+    <td><%= issue.id %></td>
+    <td><%= issue.parent_task %></td>
     <td><%= link_to 'Show', issue %></td>
     <td><%= link_to 'Edit', edit_issue_path(issue) %></td>
     <td><%= link_to 'Destroy', issue, method: :delete, data: { confirm: 'Are you sure?' } %></td>

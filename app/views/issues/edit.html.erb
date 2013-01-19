@@ -1,6 +1,36 @@
 <h1>Editing issue</h1>
 
-<%= render 'form' %>
+<%= form_for(@issue) do |f| %>
+  <% if @issue.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@issue.errors.count, "error") %> prohibited this issue from being saved:</h2>
+
+      <ul>
+      <% @issue.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="text">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <br />
+  <div class="text">
+    <%= f.label "Parent Task" %>
+    <br />
+    <% if Issue.all.delete_at(@issue.id).nil? or Issue.nil? %>
+    No other tasks!
+    <% else %>
+    <%= select("event", "id", Issue.all.delete_at(@issue.id).sort {|a, b|  a.id <=> b.id }.collect {|e| [ "Issue #{e.id}", e.id ] }, { :include_blank => false } ) %>
+    <% end %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
 
 <%= link_to 'Show', @issue %> |
 <%= link_to 'Back', issues_path %>
