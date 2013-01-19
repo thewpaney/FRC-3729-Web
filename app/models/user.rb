@@ -9,12 +9,15 @@ class User < ActiveRecord::Base
 
   # Returns true if "admin" or "master" keys are present and true
   def admin?
-    (self.credentials.has_key?(:master) and self.credentials[:master]) or (self.credentials.has_key?(:admin) and self.credentials[:admin])
+    self.credentials[:master] or  self.credentials[:admin]
   end
 
   def member?
-    self.credentials.has_key?(:member) and self.credentials[:member]
+    self.credentials[:member]
   end
+
+  def blog_access?
+    self.credentials[:blog] or self.credentials[:admin] 0f self.credentials[:master]
 
   def nice_credentials
     (c = "#{credentials.collect {|c, v| v ? c : nil}.delete_if {|c| c.nil? }.join(', ')}") == "" ? "None!" : c
