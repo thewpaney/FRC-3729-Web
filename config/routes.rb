@@ -5,7 +5,9 @@ RjfrcWeb::Application.routes.draw do
   resources :events
   resources :blog_posts
   resources :users
-
+ 
+  #Home
+  match '/home' => 'home#index'
   #Sliders
   match '/slider1' => 'slider1#index'
   match '/slider2' => 'slider2#index'
