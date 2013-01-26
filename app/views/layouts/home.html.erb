@@ -2,46 +2,18 @@
   <head>
     <%= stylesheet_link_tag "home" %>
     <style>
-      ul#header li {
-      padding: 25 0 25 0;
-      margin: 0;
-      font-size: 2.3em;
-      color: #aaa;
-      font-family:"Comic Sans MS", cursive, sans-serif;
-      display: inline-block;
-      min-height: 100px;
-      letter-spacing: 7px;
-      }
-      li#first {width: 22.2%;}
-      li#first:hover {color: red;}      
-      
-      li#team {width: 13%;}
-      li#team:hover {color: red;}            
-
-      li#code {width: 12%;}
-      li#code:hover {color: red;}            
-
-      li#build {width: 13%;}
-      li#build:hover {color:red;}      
-      
-      li#blog {width: 12%;}
-      li#blog:hover {color:red;}            
-      
-      li#community {width: 25%;}
-      li#community:hover {color:red;}            
-      
     </style>
   </head>
 
   <body>
     <div>
       <ul id="header">
-	<li id="first"> First3729</li>
-	<li id="team"> Team </li>	
-	<li id="code"> Code </li>
-	<li id="build"> Build </li>	
-	<li id="blog"> Blog </li>	
-	<li id="community"> Community </li>		
+	<li id="first"> <%= link_to "First3729", "/home" %> </li>
+	<li id="team"> <%= link_to "Team", "/home" %> </li>	
+	<li id="code"> <%= link_to "Code", "/home" %> </li>
+	<li id="build"> <%= link_to "Build", "/home" %> </li>	
+	<li id="blog"> <%= link_to "Blog", "/blog" %> </li>	
+	<li id="community"> <%= link_to "Community", "/community" %> </li>		
       </ul>
 
     <%= yield %>

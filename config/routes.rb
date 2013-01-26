@@ -8,6 +8,9 @@ RjfrcWeb::Application.routes.draw do
  
   #Home
   match '/home' => 'home#index'
+  
+  #Community
+  match '/community' => 'community#index'
   #Sliders
   match '/slider1' => 'slider1#index'
   match '/slider2' => 'slider2#index'
