@@ -1,22 +1,66 @@
 <html>
   <head>
-    <%= stylesheet_link_tag "home" %>
+
+ <%= stylesheet_link_tag "application" %>
+<%= stylesheet_link_tag "layout" %>
+    <%= javascript_include_tag "application" %>
     <style>
+
     </style>
   </head>
 
   <body>
-    <div>
-      <ul id="header">
-        <li id="first"> <%= link_to "First3729", "/home" %> </li>
-        <li id="team"> <%= link_to "Team", "/home" %> </li>
-        <li id="code"> <%= link_to "Code", "/home" %> </li>
-        <li id="build"> <%= link_to "Build", "/home" %> </li>
-        <li id="blog"> <%= link_to "Blog", "/blog" %> </li>
-        <li id="community"> <%= link_to "Community", "/community" %> </li>       \
+<div class="header2">
 
-      </ul>
+      <div class="left">
 
-    <%= yield %>
+        Regis Robotics
+      </div>
+
+
+      <div class="right">
+        <%= yield :page_title%>
+      </div>
+    </div>
+
+
+      <div id="side_bar">
+      <nav>
+        <ul>
+          <li><%= link_to "Blog", :controller => "blog_posts", :action => "index" %> </li>
+          <li><%= link_to "Calendar", :controller => "calendar", :action => "index"%></li>
+          <li><%= link_to "Issues", :controller => "issues", :action => "index"%></li>
+          <li>Wiki</li>
+          <li>Git</li>
+        </ul>
+
+      </nav>
+      </div>
+<div>
+   <div id="content">
+
+      <div id="nav-bar2">
+        <% if session[:user].nil? %>
+
+        <%= link_to "Sign Up", :controller => "users", :action => "new" %>
+        <% else %>
+        <%= "Logged in as #{session[:user].first} #{session[:user].last}" %> |
+        <%= link_to 'Sign Out', :controller => "users", :action => "logout" %>
+        <% end %>
+        <% if !session[:user].nil? and session[:user].member? %>
+        <div id="admin-bar" class="right">
+          <%= yield :admin_bar %> |
+          <%= link_to 'Users', '/users' %>
+          <% if session[:user].admin? %>
+          <%= link_to 'Admin', '/admin' %>
+          <% end %>
+        </div>
+        <% end %>
+        <br />
+      </div>
+      <br />
+
+      <%= yield %>
+    </div>
   </body>
 </html>
