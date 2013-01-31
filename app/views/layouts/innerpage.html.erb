@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <%= stylesheet_link_tag "home" %>
+    <style>
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <ul id="header">
+        <li id="first"> <%= link_to "First3729", "/home" %> </li>
+        <li id="team"> <%= link_to "Team", "/home" %> </li>
+        <li id="code"> <%= link_to "Code", "/home" %> </li>
+        <li id="build"> <%= link_to "Build", "/home" %> </li>
+        <li id="blog"> <%= link_to "Blog", "/blog" %> </li>
+        <li id="community"> <%= link_to "Community", "/community" %> </li>       \
+
+      </ul>
+
+    <%= yield %>
+  </body>
+</html>

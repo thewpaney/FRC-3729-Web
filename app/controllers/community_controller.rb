@@ -1,3 +1,3 @@
 class CommunityController < ApplicationController
-  layout "home"
+  layout "innerpage"
 end
