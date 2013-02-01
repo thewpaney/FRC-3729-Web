@@ -1,3 +1,7 @@
+div#sidebar {
+    width: 15%;
+}
+
 a:link    {
   text-decoration:  none;
   color:            #aaa;}
@@ -11,23 +15,23 @@ a:active  {
   text-decoration:  none;
   color: red;} 
 
-body {
-    margin: -16 0 0 0;
-    
-}
-div#header_div {
+div#sidebar_div {
+    width: 13%;
     background-color: rgb(241,241,241);
+    margin: -20 0 0 0;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    margin-right: 2%;
 }
 
-ul#header_ul li {
-    font-weight: bolder;
-    padding: 25 0 25 0;
-    margin: 0;
-    font-size: 2.3em;
+ul#sidebar_ul li {
+    list-style-type: none;
+    font-weight: bold;
+    padding: -15 0 0 0;    
+    font-size: 1.5em;
     color: #aaa;
     font-family:"Comic Sans MS", cursive, sans-serif;
-    display: inline-block;
-    letter-spacing: 7px;
 }
 
 li#first {width: 22.2%;}

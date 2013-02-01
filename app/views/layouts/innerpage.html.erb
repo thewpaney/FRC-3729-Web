@@ -1,66 +1,17 @@
-<html>
-  <head>
+<%= stylesheet_link_tag "innerpage" %>
+<div id="sidebar_div">
+  <ul id="sidebar_ul">
+    <li>About</li>
+    <li>Calendar</li>
+    <li>FIRST</li>
+    <li>Sign In</li>
+    <li>Sign Up</li>
+  </ul>
+</div>
 
- <%= stylesheet_link_tag "application" %>
-<%= stylesheet_link_tag "layout" %>
-    <%= javascript_include_tag "application" %>
-    <style>
+<div id="content">
+  <%= yield %>
+  
+</div>
 
-    </style>
-  </head>
-
-  <body>
-<div class="header2">
-
-      <div class="left">
-
-        Regis Robotics
-      </div>
-
-
-      <div class="right">
-        <%= yield :page_title%>
-      </div>
-    </div>
-
-
-      <div id="side_bar">
-      <nav>
-        <ul>
-          <li><%= link_to "Blog", :controller => "blog_posts", :action => "index" %> </li>
-          <li><%= link_to "Calendar", :controller => "calendar", :action => "index"%></li>
-          <li><%= link_to "Issues", :controller => "issues", :action => "index"%></li>
-          <li>Wiki</li>
-          <li>Git</li>
-        </ul>
-
-      </nav>
-      </div>
-<div>
-   <div id="content">
-
-      <div id="nav-bar2">
-        <% if session[:user].nil? %>
-
-        <%= link_to "Sign Up", :controller => "users", :action => "new" %>
-        <% else %>
-        <%= "Logged in as #{session[:user].first} #{session[:user].last}" %> |
-        <%= link_to 'Sign Out', :controller => "users", :action => "logout" %>
-        <% end %>
-        <% if !session[:user].nil? and session[:user].member? %>
-        <div id="admin-bar" class="right">
-          <%= yield :admin_bar %> |
-          <%= link_to 'Users', '/users' %>
-          <% if session[:user].admin? %>
-          <%= link_to 'Admin', '/admin' %>
-          <% end %>
-        </div>
-        <% end %>
-        <br />
-      </div>
-      <br />
-
-      <%= yield %>
-    </div>
-  </body>
-</html>
+<%= parent_layout 'application' %>

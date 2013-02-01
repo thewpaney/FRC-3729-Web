@@ -1,83 +1,22 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <title>RJ FRC</title>
-    <%= stylesheet_link_tag "application" %>
-    <%= stylesheet_link_tag "layout" %>    
-    <%= javascript_include_tag "application" %>
-    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag "home" %>
+    <style>
+    </style>
   </head>
+
   <body>
-<!--    <div id="beta_banner">
-      <table>
-	<tr>
-	  <td>
-	<%= link_to image_tag("Matt and Drew.jpg", :height => 115, :width => 115), "/" %>
-	  </td>
-	  <td>
-	    <h2>
-	Hi. This website is in beta right now. If you have any problems, questions, ideas,</br> concerns, jokes, or movie recommendations, click the picture to let us know.
-	</h2>
-	  </td>
-
-	</tr>
-      </table>
-
-    </div>      -->
-
-    <div class="header">
-
-      <div class="left">
-
-	Regis Robotics
-      </div>
-
-      
-      <div class="right">
-	<%= yield :page_title%>
-      </div>
-    </div>
-    
-    <div id="side_bar">
-      <nav>
-	<ul>
-	  <li><%= link_to "Blog", :controller => "blog_posts", :action => "index" %> </li>
-	  <li><%= link_to "Calendar", :controller => "calendar", :action => "index" %></li>
-	  <li><%= link_to "Issues", :controller => "issues", :action => "index"%></li>
-	  <li>Wiki</li>
-	  <li>Git</li>
-	</ul>
-
-      </nav>
-      </div>
-
-    <div id="content">
-
-      <div id="nav-bar">
-	<% if session[:user].nil? %>
-	<%= link_to "Sign In", "/login" %>
-	<%= link_to "Sign Up", :controller => "users", :action => "new" %>
-	<% else %>
-	<%= "Logged in as #{session[:user].first} #{session[:user].last}" %> |
-	<%= link_to 'Sign Out', :controller => "users", :action => "logout" %>
-	<% end %>
-	<% if !session[:user].nil? and session[:user].member? %>
-	<div id="admin-bar" class="right">
-	  <%= yield :admin_bar %> | 
-	  <%= link_to 'Users', '/users' %>
-	  <% if session[:user].admin? %>
-	  <%= link_to 'Admin', '/admin' %>
-	  <% end %>
-	</div>
-	<% end %>
-	<br />
-      </div>
-      <br />
-      
-      <%= yield %>
-    </div>
-    <div class="footer">
+    <div id="header_div">
+      <ul id="header_ul">
+	<li id="first"> <%= link_to "First3729", "/home" %> </li>
+	<li id="team"> <%= link_to "Team", "/home" %> </li>	
+	<li id="code"> <%= link_to "Code", "/home" %> </li>
+	<li id="build"> <%= link_to "Build", "/home" %> </li>	
+	<li id="blog"> <%= link_to "Blog", "/blog" %> </li>	
+	<li id="community"> <%= link_to "Community", "/community" %> </li>		
+      </ul>
 
     </div>
+    <%= yield %>
   </body>
-</Html>
+</html>
