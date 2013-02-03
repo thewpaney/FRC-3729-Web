@@ -8,6 +8,9 @@ RjfrcWeb::Application.routes.draw do
  
   #Home
   match '/home' => 'home#index'
+
+  #Team
+  match '/team' => 'team#about'
   
   #Community
   match '/community' => 'community#index'

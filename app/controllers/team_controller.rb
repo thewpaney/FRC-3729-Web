@@ -1,3 +1,3 @@
 class TeamController < ApplicationController
-  layout "home"
+  layout "innerpage"
 end
