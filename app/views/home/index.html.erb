@@ -1,3 +1,12 @@
+<%= javascript_include_tag "layout.js" %>
 <div>
-  <img style="display: block; margin: auto auto auto auto" src='/assets/full.png' width=1000>
+  <!--  <img id="mainpicture"  src='/assets/full.png' width=1000>-->
+  <%= image_tag "homepage.jpg", :id => "mainpicture", :style => "display: block; margin: auto auto auto auto", :width => 1000 %>
+  <%= image_tag "blog.jpg", :style => "display: none; margin: auto auto auto auto;", :width => 1000 %>
+  <%= image_tag "homepage.jpg", :style => "display: none; margin: auto auto auto auto;", :width => 1000 %>  
+  <%= image_tag "code.jpg", :style => "display: none; margin: auto auto auto auto;", :width => 1000 %>
+  <%= image_tag "community.jpg", :style => "display: none; margin: auto auto auto auto;", :width => 1000 %>
+  <%= image_tag "team.jpg", :style => "display: none; margin: auto auto auto auto;", :width => 1000 %>
+  <%= image_tag "build.jpg", :style => "display: none; margin: auto auto auto auto;", :width => 1000 %>    
+  
 </div>
