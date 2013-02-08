@@ -2,17 +2,15 @@
 
 <div id="sidebar_div">
   <ul id="sidebar_ul">
-    <li>About</li>
-    <li>Calendar</li>
+    <li><%= link_to "About", "/team/about" %></li>
+    <li> <%= link_to "Calendar", "/team/calendar" %></li>
     <li>Sign In</li>
     <li>Sign Up</li>
   </ul>
-  <%= image_tag 'lizzie sitting.png', :width => "100%", :style => "margin: 250 0 0 0 ;" %>
 </div>
 
 <div id="content">
   <%= yield %>
-  
 </div>
 
 <%= parent_layout 'application' %>

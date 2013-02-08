@@ -5,12 +5,11 @@ RjfrcWeb::Application.routes.draw do
   resources :events
   resources :blog_posts
   resources :users
- 
-  #Home
-  match '/home' => 'home#index'
+  resources :home
 
   #Team
-  match '/team' => 'team#about'
+  match '/team/about' => 'team#about'
+  match '/team/calendar' => 'team#calendar'  
   
   #Community
   match '/community' => 'community#index'
