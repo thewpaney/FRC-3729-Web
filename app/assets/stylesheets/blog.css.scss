@@ -1,0 +1,15 @@
+// Place all the styles related to the BlogPosts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.title {
+    border-bottom: 3px solid Black;
+    text-transform:uppercase;
+}
+
+#blog_entry {
+    margin: 2em;
+    padding: 1em;
+    background-color: rgb(241,241,241);
+    font-family:"Avenir", sans-serif;    
+}
