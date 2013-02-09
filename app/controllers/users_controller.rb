@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     self.authenticate! params[:user]
     if !session[:user].nil?
       flash[:message]  = "You're logged in as #{session[:user].first} #{session[:user].last}."
-      redirect_to "/blog"
+      redirect_to "/team"
     elsif request.post?
       flash[:error] = "Login failed."
     end
@@ -95,7 +95,7 @@ class UsersController < ApplicationController
     else
       flash[:error] = "You're not currently logged in!"
     end
-    redirect_to '/blog'
+    redirect_to '/team'
   end
   
 
