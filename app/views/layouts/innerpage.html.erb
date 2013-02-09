@@ -4,8 +4,20 @@
   <ul id="sidebar_ul">
     <li><%= link_to "About", "/team/about" %></li>
     <li> <%= link_to "Calendar", "/team/calendar" %></li>
-    <li>Sign In</li>
-    <li>Sign Up</li>
+
+    <% if session[:user] %>
+    <li> <%= link_to "Issues", "/issues" %> </li>
+    <li></li>
+    <% if session[:user].admin? %>
+    <li>Mail</li>
+    <li>Users</li>
+    <% end %>
+    <li> <%= link_to "Sign Out", "/logout" %> </li>
+    <% else %>
+    <li></li>    
+    <li> <%= link_to "Sign In", "/login" %></li>
+    <% end %>
+
   </ul>
 </div>
 

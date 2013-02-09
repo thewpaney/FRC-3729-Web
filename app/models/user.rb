@@ -17,7 +17,8 @@ class User < ActiveRecord::Base
   end
 
   def blog_access?
-    self.credentials[:blog] or self.credentials[:admin] 0f self.credentials[:master]
+    self.credentials[:blog] or self.credentials[:admin] or self.credentials[:master]
+  end
 
   def nice_credentials
     (c = "#{credentials.collect {|c, v| v ? c : nil}.delete_if {|c| c.nil? }.join(', ')}") == "" ? "None!" : c

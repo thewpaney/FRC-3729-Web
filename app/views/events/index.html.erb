@@ -1,8 +1,4 @@
-<% content_for :page_title do %>
-Events
-<% end %>
-
-<h1>Listing events</h1>
+<h1>Events</h1>
 
 <table class="entry">
   <tr>
@@ -18,7 +14,7 @@ Events
     <td><%= event.attendance %></td>
     <td><%= "#{event.start_at.to_s(:pretty)} to </br> #{event.end_at.to_s(:pretty)}".html_safe %></td>
     <td><%= link_to 'Edit', edit_event_path(event) %> </br>
-    <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>    
+    <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
     <td>&nbsp;</td>
 
