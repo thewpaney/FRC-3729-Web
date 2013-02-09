@@ -1,5 +1,5 @@
 class IssuesController < ApplicationController
-  layout "innerpage"
+  layout "team"
   # GET /issues
   # GET /issues.json
   def index

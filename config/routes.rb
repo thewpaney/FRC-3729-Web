@@ -8,8 +8,7 @@ RjfrcWeb::Application.routes.draw do
   resources :home
 
   #Team
-  match '/team/about' => 'team#about'
-  match '/team/calendar' => 'team#calendar'  
+  match '/team' => 'team#about'
   
   #Community
   match '/community' => 'community#index'
@@ -32,6 +31,8 @@ RjfrcWeb::Application.routes.draw do
   match '/blog(/:id)' => 'blog_posts#show'
   # Calendar
   match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
+  match '/calendar' => 'calendar#index'
+  
   # Admin
   get '/admin' => 'admin#index'
 

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  layout "innerpage"
+  layout "team"
 
   def login
     self.authenticate! params[:user]

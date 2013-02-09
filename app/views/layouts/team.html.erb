@@ -1,9 +1,9 @@
-<%= stylesheet_link_tag "innerpage" %>
+<%= stylesheet_link_tag "team" %>
 
 <div id="sidebar_div">
   <ul id="sidebar_ul">
-    <li><%= link_to "About", "/team/about" %></li>
-    <li> <%= link_to "Calendar", "/team/calendar" %></li>
+    <li><%= link_to "About", "/team" %></li>
+    <li> <%= link_to "Calendar", "/calendar" %></li>
 
     <% if session[:user] %>
     <li> <%= link_to "Issues", "/issues" %> </li>

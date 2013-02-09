@@ -1,5 +1,4 @@
 class BlogPostsController < ApplicationController
-  layout "innerpage"
 
   # GET /blog_posts
   # GET /blog_posts.json
