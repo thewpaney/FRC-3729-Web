@@ -12,6 +12,7 @@
 .*~
 \#*
 .\#*
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
 
@@ -24,3 +25,5 @@ vendor
 
 # Differs from machine to machine
 /config/database.yml
+
+.DS_Store

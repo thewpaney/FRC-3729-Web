@@ -1,15 +1,7 @@
-<% content_for :page_title do %>
-Calendar
-<% end %>
-
-<%= content_for :admin_bar do %>
-<%= link_to 'New Event', new_event_path %>
-<% end %>
-
 <%= stylesheet_link_tag "event_calendar" %>
 <%= javascript_include_tag "event_calendar" %>
+<%= raw(event_calendar) %>
 
-<div class="bubble">
-  <%= raw(event_calendar) %>
-
-</div>
+<% if session[:user] %>
+<%= render "new_event" %>
+<% end %>

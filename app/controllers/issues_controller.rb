@@ -1,4 +1,5 @@
 class IssuesController < ApplicationController
+  layout "team"
   # GET /issues
   # GET /issues.json
   def index

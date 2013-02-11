@@ -1,20 +1,15 @@
-<% content_for :page_title do %>
-Blog
-<% end %>
+<% content_for :header do -%>
+  <%= stylesheet_link_tag "blog" %>
+<% end -%>
 
-<% content_for :admin_bar do %>
-
-<% end %>
-
-<div id="index">
   <% @blog_posts.reverse.each do |blog_post| %>
-  <div class="bubble">
+  <div id="blog_entry">  
     <h2 class="title"><%= blog_post.title %></h2>
     <%= blog_post.body.html_safe %>
     <br />
     <br />
-    <% if session[:user] and (session[:user].blog_access? or session[:user].admin?) %>
     <%= link_to 'Permalink', blog_post %>
+    <% if session[:user] and session[:user].blog_access? %>
     <%= link_to 'Edit', edit_blog_post_path(blog_post) %>
     <%= link_to 'Destroy', blog_post, method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>
@@ -24,16 +19,6 @@ Blog
     
     <br/>
     <br/>
-  </div>
+  </div>    
   <% end %>
 
-  <div class="footer">
-    <br />
-    <center>
-      Powered By
-      <br />
-      <%= image_tag '/assets/rails.png' %>
-    </center>
-    <br />
-  </div>
-</div>
