@@ -1,4 +1,4 @@
-<h1>Editing issue</h1>
+<h1>Editing Issue <%= @issue.id %> - <%= @issue.name %></h1>
 
 <div class="bubble">
 <%= form_for(@issue) do |f| %>
@@ -19,20 +19,7 @@
     <%= f.text_area :description %>
   </div>
   <br />
-  <div class="text">
-    <%= f.label "Parent Task" %>
-    <br />
-    <% if Issue.all.delete_at(@issue.id).nil? or Issue.nil? %>
-    No other tasks!
-    <% else %>
-    <%= select("event", "id", Issue.all.delete_at(@issue.id).sort {|a, b|  a.id <=> b.id }.collect {|e| [ "Issue #{e.id}", e.id ] }, { :include_blank => false } ) %>
-    <% end %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
-
 </div>
 
 <%= link_to 'Show', @issue %> |
