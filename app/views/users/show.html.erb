@@ -28,11 +28,6 @@
   <% unless session[:user].nil? %>
   <% if session[:user].admin? %>
 
-  <p>
-    <b>Password</b>
-    <%= @user.pass %>
-  <p>
-
   <%= link_to 'Edit', edit_user_path(@user) %> | 
   <% end %>
   <% end %>

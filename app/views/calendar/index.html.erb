@@ -1,7 +1,8 @@
 <%= stylesheet_link_tag "event_calendar" %>
 <%= javascript_include_tag "event_calendar" %>
-<%= raw(event_calendar) %>
 
 <% if session[:user] %>
-<%= render "new_event" %>
+<%= link_to "New Event", '/events/new' %>
 <% end %>
+
+<%= raw(event_calendar) %>
