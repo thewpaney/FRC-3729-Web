@@ -1,10 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<b>Issue <%= @issue.id %></b>
+<b>Issue <%= @issue.id %> - <%= @issue.name %></b>
 
 <div class="bubble">
 <p>
   <%= @issue.description %>
+</p>
+<p>
+<% unless Issue.where(parent: @issue.id) == [] %>
+<table>
+<tr><td><b>Children</b></td></tr>
+<% Issue.where(parent: @issue.id).each do |issue| %>
+  <tr>
+    <td><%= link_to "#{issue.id} - #{issue.name}", issue %></td>
+    <td><%= link_to 'Show', issue %></td>
+    <td><%= link_to 'Edit', edit_issue_path(issue) %></td>
+    <td><%= link_to 'Destroy', issue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+<% end %>
 </p>
 </div>
 

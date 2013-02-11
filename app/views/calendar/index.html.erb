@@ -1,7 +1,8 @@
 <%= stylesheet_link_tag "event_calendar" %>
 <%= javascript_include_tag "event_calendar" %>
+
 <%= raw(event_calendar) %>
 
 <% if session[:user] %>
-<%= render "new_event" %>
+<%= render 'events/calendar_partial' %>
 <% end %>

@@ -17,7 +17,10 @@ DAEMON=/usr/bin/thin
 
 # Exit if the package is not installed
 [ -x "$DAEMON" ] || exit 0
-
+if [ "$(id -u)" != "33" ]; then
+   echo "This script must be run as www-data" 1>&2
+   exit 1
+fi
 case "$1" in
     start)
 	$DAEMON start -s3 --socket /tmp/thin.sock
@@ -41,3 +44,4 @@ case "$1" in
 esac
 
 :
+exit

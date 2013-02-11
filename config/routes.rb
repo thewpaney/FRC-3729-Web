@@ -1,7 +1,5 @@
 RjfrcWeb::Application.routes.draw do
   resources :issues
-
-
   resources :events
   resources :blog_posts
   resources :users
@@ -29,6 +27,8 @@ RjfrcWeb::Application.routes.draw do
   get '/blog' => 'blog_posts#index'
   get '/blog/new' => 'blog_posts#new'
   match '/blog(/:id)' => 'blog_posts#show'
+  # Issues
+  match '/issues(/:id)' => 'issues#show'
   # Calendar
   match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
   match '/calendar' => 'calendar#index'

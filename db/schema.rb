@@ -31,6 +31,10 @@ ActiveRecord::Schema.define(:version => 20130119192138) do
 
   create_table "issues", :force => true do |t|
     t.string   "description"
+    t.string   "name"
+    t.text     "watchers"
+    t.integer  "parent"
+    t.text     "subtasks"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
