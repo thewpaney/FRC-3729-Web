@@ -4,7 +4,6 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Parent</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,7 +13,6 @@
 <% next unless issue.parent.nil? %>
   <tr>
     <td><%= link_to "#{issue.id} - #{issue.name}", issue %></td>
-    <td><%= issue.parent.nil? ? "None" : "#{issue.parent} - #{Issue.where(id: issue.parent).first.name}" %></td>
     <td><%= link_to 'Show', issue %></td>
     <td><%= link_to 'Edit', edit_issue_path(issue) %></td>
     <td><%= link_to 'Destroy', issue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
