@@ -1,21 +1,13 @@
-$(document).ready(
-    function() {
-	$('#team').hover(
-	    function() {$('#mainpicture').attr('src', '<%= asset_path "team.png" %>'); console.log("hover on team");},
-	    function() {$('#mainpicture').attr('src', '<%= asset_path "homepage.png" %>'); console.log("unhover on team");});
-	
-	$('#blog').hover(
-	    function() {$('#mainpicture').attr('src', '<%= asset_path "blog.png" %>'); console.log("hover on blog");},
-	    function() {$('#mainpicture').attr('src', '<%= asset_path "homepage.png" %>'); console.log("unhover on blog");});
+function heading(name, index, array) {
+    $('#' + name).hover(
 
-	$('#code').hover(
-	    function() {$('#mainpicture').attr('src', '<%= asset_path "code.png" %>'); console.log("hover on code");},
-	    function() {$('#mainpicture').attr('src', '<%= asset_path "homepage.png" %>'); console.log("unhover on code");});
+	function() {
+	    $('#mainpicture').attr('src', '/assets/' + name + '.png');
+	    console.log("hover on team");},
 
-	$('#build').hover(
-	    function() {$('#mainpicture').attr('src', '<%= asset_path "build.png" %>'); console.log("hover on build");},
-	    function() {$('#mainpicture').attr('src', '<%= asset_path "homepage.png" %>'); console.log("unhover on build");});	
-	
-	$('#community').hover(
-	    function() {$('#mainpicture').attr('src', '<%= asset_path "community.png" %>'); console.log("hover on community");},
-	    function() {$('#mainpicture').attr('src', '<%= asset_path "homepage.png" %>'); console.log("unhover on community");})})
+	function() {
+	    $('#mainpicture').attr('src', '/assets/homepage.png');
+	    console.log("unhover on team");});
+    }
+
+$(document).ready(function() {["team", "blog", "code", "build", "community"].forEach(heading)})
