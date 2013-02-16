@@ -1,0 +1,23 @@
+<%= stylesheet_link_tag "build" %>
+
+<div id="sidebar_div">
+  <ul id="sidebar_ul">
+    <li><%= link_to "Garage", "/build/garage" %></li>
+    <li> <%= link_to "Projects", "/code/projects" %></li>
+
+    <% if session[:user] %>
+    <li> <%= link_to "Sign Out", "/logout" %> </li>
+    <% else %>
+    <li></li>    
+    <li> <%= link_to "Sign In", "/login" %></li>
+    <li> <%= link_to "Sign Up", "/signup" %></li>    
+    <% end %>
+
+  </ul>
+</div>
+
+<div id="content">
+  <%= yield %>
+</div>
+
+<%= parent_layout 'application' %>

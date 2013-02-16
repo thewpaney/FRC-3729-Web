@@ -1,0 +1,25 @@
+<%= stylesheet_link_tag "community" %>
+<%= stylesheet_link_tag "sidebar"%>
+
+<div id="sidebar_div">
+  <ul id="sidebar_ul">
+    <li><%= link_to "Sponsors", "/community/sponsors" %></li>
+    <li> <%= link_to "Events", "/community/events" %></li>
+    <li> <%= link_to "Outreach", "/community/outreach" %></li>
+    
+    <% if session[:user] %>
+    <li> <%= link_to "Sign Out", "/logout" %> </li>
+    <% else %>
+    <li></li>    
+    <li> <%= link_to "Sign In", "/login" %></li>
+    <li> <%= link_to "Sign Up", "/signup" %></li>    
+    <% end %>
+
+  </ul>
+</div>
+
+<div id="content">
+  <%= yield %>
+</div>
+
+<%= parent_layout 'application' %>

@@ -23,7 +23,7 @@ RjfrcWeb::Application.routes.draw do
   post '/users/new' => 'users#create'
   match '/users(/:id)' => 'users#show'
   # Blog
-  match '/' => redirect("/blog")  
+  match '/' => redirect("/home")  
   get '/blog' => 'blog_posts#index'
   get '/blog/new' => 'blog_posts#new'
   match '/blog(/:id)' => 'blog_posts#show'
