@@ -4,7 +4,7 @@
 </script>
 <div id="sidebar_div">
   <ul id="sidebar_ul">
-    <li><%= link_to "About", "/team" %></li>
+    <li><%= link_to "About Us", "/team" %></li>
     <li> <%= link_to "Calendar", "/calendar" %></li>
 
     <% if session[:user] %>
@@ -14,9 +14,10 @@
     <li>Mail</li>
     <li>Users</li>
     <% end %>
+    <br />
     <li> <%= link_to "Sign Out", "/logout" %> </li>
     <% else %>
-    <li></li>    
+    <br />   
     <li> <%= link_to "Sign In", "/login" %></li>
     <li> <%= link_to "Sign Up", "/signup" %></li>    
     <% end %>

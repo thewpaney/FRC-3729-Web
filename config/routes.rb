@@ -4,10 +4,13 @@ RjfrcWeb::Application.routes.draw do
   resources :blog_posts
   resources :users
   resources :home
-
-  #Team
-  match '/team' => 'team#about'
+  resources :build
+  resources :community
+  resources :code
   
+  #Team
+  get '/team' => 'team#about'  
+  get '/team/contact' => 'team#contact'
   #Community
   match '/community' => 'community#index'
   #Sliders
@@ -32,7 +35,10 @@ RjfrcWeb::Application.routes.draw do
   # Calendar
   match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
   match '/calendar' => 'calendar#index'
-  
+  # Build
+  get '/build' => 'build#index'
+  # Code
+  get '/build' => 'build#index'
   # Admin
   get '/admin' => 'admin#index'
 

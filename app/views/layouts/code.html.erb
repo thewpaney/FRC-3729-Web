@@ -5,7 +5,7 @@
   <ul id="sidebar_ul">
     <li><%= link_to "About", "/code/about" %></li>
     <li> <%= link_to "Projects", "/code/projects" %></li>
-
+    <br />
     <% if session[:user] %>
     <li> <%= link_to "Sign Out", "/logout" %> </li>
     <% else %>

@@ -1,10 +1,11 @@
 <%= stylesheet_link_tag "build" %>
+<%= stylesheet_link_tag "sidebar" %>
 
 <div id="sidebar_div">
   <ul id="sidebar_ul">
     <li><%= link_to "Garage", "/build/garage" %></li>
     <li> <%= link_to "Projects", "/code/projects" %></li>
-
+    <br />
     <% if session[:user] %>
     <li> <%= link_to "Sign Out", "/logout" %> </li>
     <% else %>
