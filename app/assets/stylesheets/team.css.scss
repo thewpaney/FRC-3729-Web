@@ -11,67 +11,20 @@ a:active  {
   text-decoration:  none;
   color: red;} 
 
-div#sidebar_div {
-    min-width: 10em;
-    background-color: rgb(241,241,241);
-    margin: -20 0 0 0;
-    height: 100%;
-    overflow: hidden;
+div#content_wrapper {
     position: absolute;
-    margin-right: 2%;
+    margin-left: 13em;
+    margin-right: 8em;
+    margin-top: 6em;
+    right: 0px;
+    left: 0px;
+    bottom: auto;
+    top: 0px;
+    background-color: white;
 }
 
 div#content {
-    margin-left: 10em;
-}
-
-ul#sidebar_ul li {
-    list-style-type: none;
-    font-weight: bold;
-    font-size: 1.5em;
-    color: #aaa;
-    font-family:"Avenir", sans-serif;
-}
-
-li#first {width: 22.2%;}
-li#first:hover {color: red;}      
-
-li#team {width: 13%;}
-li#team:hover {color: red;}            
-
-li#code {width: 12%;}
-li#code:hover {color: red;}            
-
-li#build {width: 13%;}
-li#build:hover {color:red;}      
-
-li#blog {width: 12%;}
-li#blog:hover {color:red;}            
-
-li#community {width: 25%;}
-
-div#sidebar {
-    width: 15%;
-}
-
-tr#frc3729 {
-    width: 400px;
-    float: left;
-}
-
-tr#FIRST {
-    width: 400px;
-    float: right;
-}
-
-tr#about_header {
-
-}
-
-tr#about_header_left {
-    float: left;
-}
-
-tr#about_header_left {
-    float: left;
+    margin-left: 1em;
+    margin-right: 1em;
+    background-color: white;
 }

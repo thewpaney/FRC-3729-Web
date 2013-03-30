@@ -12,17 +12,12 @@ a:active  {
   color: red;} 
 
 div#sidebar_div {
-    min-width: 10em;
+    min-width: 12em;
     background-color: rgb(241,241,241);
     margin: -20 0 0 0;
-    height: 100%;
     overflow: hidden;
     position: absolute;
     margin-right: 2%;
-}
-
-div#content {
-    margin-left: 10em;
 }
 
 ul#sidebar_ul li {

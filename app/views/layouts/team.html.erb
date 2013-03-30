@@ -1,10 +1,12 @@
+<%= stylesheet_link_tag "sidebar" %>
 <%= stylesheet_link_tag "team" %>
 <script type="text/javascript">
   $("#team").attr("color", "red");
 </script>
 <div id="sidebar_div">
   <ul id="sidebar_ul">
-    <li><%= link_to "About Us", "/team" %></li>
+    <li><%= link_to "About Us", "/team/about-us" %></li>
+    <li><%= link_to "About FIRST", "/team/about-first" %></li>
     <li> <%= link_to "Calendar", "/calendar" %></li>
 
     <% if session[:user] %>
@@ -25,7 +27,7 @@
   </ul>
 </div>
 
-<div id="content">
+<div id="content_wrapper">
   <%= yield %>
 </div>
 

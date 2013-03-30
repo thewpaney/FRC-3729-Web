@@ -1,8 +1,8 @@
-<% content_for :page_title do %>
-New Event
-<% end %>
+<br />
+<strong><%= link_to "View All Events", "/events"%></strong>
 
-<h1>New event</h1>
+<h2>Create New Event</h2>
+
 <%= form_for(@event) do |f| %>
   <% if @event.errors.any? %>
     <div id="error_explanation">
@@ -20,18 +20,20 @@ New Event
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
+  <br />
   <div class="field">
     <%= f.label "Start date" %><br />
     <%= f.date_select :start_at %>
     <%= f.time_select :start_at, :ignore_date => true %>
   </div>
+  <br />
   <div class="field">
     <%= f.label "End date" %><br />
     <%= f.date_select :end_at %>
     <%= f.time_select :end_at, :ignore_date => true %>
   </div>
+  <br />
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
-<br />

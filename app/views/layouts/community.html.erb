@@ -1,4 +1,4 @@
-<%= stylesheet_link_tag "community" %>
+<%= stylesheet_link_tag "team" %>
 <%= stylesheet_link_tag "sidebar"%>
 
 <div id="sidebar_div">
@@ -6,7 +6,7 @@
     <li><%= link_to "Sponsors", "/community/sponsors" %></li>
     <li> <%= link_to "Events", "/community/events" %></li>
     <li> <%= link_to "Outreach", "/community/outreach" %></li>
-    <li> <%= link_to "Contact Us", "/team/contact" %></li>
+    <li> <%= link_to "Contact Us", "/community/contact" %></li>
     <br />
     <% if session[:user] %>
     <li> <%= link_to "Sign Out", "/logout" %> </li>
@@ -19,7 +19,7 @@
   </ul>
 </div>
 
-<div id="content">
+<div id="content_wrapper">
   <%= yield %>
 </div>
 

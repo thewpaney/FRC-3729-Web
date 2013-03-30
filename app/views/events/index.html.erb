@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag "events" %>
+<div id="content">
 <h1>Events</h1>
 
 <table class="entry">
@@ -11,7 +13,7 @@
 <% @events.each do |event| %>
   <tr>
     <td><%= link_to event.name, event %></td>
-    <td><%= event.attendance %></td>
+    <td><%= event.attendance.count %> / <%= User.all.count %></td>
     <td><%= "#{event.start_at.to_s(:pretty)} to </br> #{event.end_at.to_s(:pretty)}".html_safe %></td>
     <td><%= link_to 'Edit', edit_event_path(event) %> </br>
     <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -22,7 +24,8 @@
 
 <% end %>
 <tr><td><br /></td></tr>
-<tr><td><%= link_to 'New Event', new_event_path %></td></tr>
 </table>
-
+<%= link_to 'New Event', new_event_path %> | <%= link_to 'Calendar', '/calendar' %>
+<br /x>
 <br />
+</div>

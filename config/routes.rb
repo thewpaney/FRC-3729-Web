@@ -5,14 +5,17 @@ RjfrcWeb::Application.routes.draw do
   resources :users
   resources :home
   resources :build
-  resources :community
   resources :code
   
   #Team
-  get '/team' => 'team#about'  
-  get '/team/contact' => 'team#contact'
+  get '/team' => 'team#about-us'
+  get '/team/about-us' => 'team#about-us'
+  get '/team/about-first' => 'team#about-first'
+  # get '/team/contact' => 'team#contact'
   #Community
   match '/community' => 'community#index'
+  get '/community/sponsors' => 'community#sponsors'
+  get '/community/contact' => 'community#contact'
   #Sliders
   match '/slider1' => 'slider1#index'
   match '/slider2' => 'slider2#index'
@@ -37,8 +40,9 @@ RjfrcWeb::Application.routes.draw do
   match '/calendar' => 'calendar#index'
   # Build
   get '/build' => 'build#index'
+  
   # Code
-  get '/build' => 'build#index'
+  get '/code' => 'code#index'
   # Admin
   get '/admin' => 'admin#index'
 

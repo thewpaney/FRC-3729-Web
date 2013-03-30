@@ -1,5 +1,5 @@
 class BlogPostsController < ApplicationController
-
+  layout "blag"
   # GET /blog_posts
   # GET /blog_posts.json
   def index

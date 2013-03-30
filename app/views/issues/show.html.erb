@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag "events" %>
+<div id="content">
 <p id="notice"><%= notice %></p>
 
 <b>Issue <%= @issue.id %> - <%= @issue.name %></b>
@@ -8,7 +10,7 @@
 </p>
 <p>
 <% unless Issue.where(parent: @issue.id) == [] %>
-<table>
+<table class="entry">
 <tr><td><b>Children</b></td></tr>
 <% Issue.where(parent: @issue.id).each do |issue| %>
   <tr>
@@ -26,3 +28,6 @@
 
 <%= link_to 'Edit', edit_issue_path(@issue) %> |
 <%= link_to 'Back', issues_path %>
+<br />
+<br />
+</div>

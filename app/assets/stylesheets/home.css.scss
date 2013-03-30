@@ -14,10 +14,17 @@ a:active  {
 body {
     margin: -16 0 0 0;
     min-width: 1000px;
+    background-color: rgb(241,241,241);
 }
 
 div#header_div {
     background-color: rgb(241,241,241);
+}
+
+div#home_wrapper {
+    left: 0;
+    right: 0;
+    background-color: white;
 }
 
 ul#header_ul li {
