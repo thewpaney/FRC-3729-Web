@@ -4,6 +4,14 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js"></script>
     <%= csrf_meta_tag %>
     <%= javascript_include_tag :defaults %>
+    <%= javascript_include_tag "vendor/custom.modernizr" %>
+    <%= stylesheet_link_tag "app" %>
+
+    <style tpye="text/css">
+      ul {
+      line-height: 1.7em;
+      }
+    </style>
     <%= yield :header %>
   </head>
   <body>
@@ -20,6 +28,9 @@
     <%= yield %>
     <div id="footer">
       
+    </div>
+    <div id="mini" style ="max-width: 100%; left: auto; right: 0px; bottom: 0px; top: auto; position: fixed;">
+      <%= yield :mini %>
     </div>
   </body>
 </html>

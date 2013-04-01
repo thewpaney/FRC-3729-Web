@@ -1,9 +1,10 @@
-<%= stylesheet_link_tag "code" %>
+<%= stylesheet_link_tag "team" %>
 <%= stylesheet_link_tag "sidebar"%>
 
 <div id="sidebar_div">
   <ul id="sidebar_ul">
     <li><%= link_to "About", "/code/about" %></li>
+    <li><%= link_to "Git", "/code/git" %></li>
     <li> <%= link_to "Projects", "/code/projects" %></li>
     <br />
     <% if session[:user] %>
@@ -17,7 +18,7 @@
   </ul>
 </div>
 
-<div id="content">
+<div id="content_wrapper">
   <%= yield %>
 </div>
 
