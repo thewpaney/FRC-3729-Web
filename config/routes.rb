@@ -46,12 +46,11 @@ RjfrcWeb::Application.routes.draw do
   get '/build/garage/2012' => 'build#2012'
   get '/build/garage/2011' => 'build#2011'
   # Code
-  get '/code' => 'code#about'
-  get '/code/about' => 'code#about'
+  get '/code' => 'code#git'
   get '/code/projects' => 'code#projects'
   get '/code/git' => 'code#git'
   # Admin
   get '/admin' => 'admin#index'
-
+  
 end
 

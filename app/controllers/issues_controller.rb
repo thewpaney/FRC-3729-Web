@@ -1,5 +1,6 @@
 class IssuesController < ApplicationController
   layout "team"
+    before_filter :login_required!, only: [:create, :new, :edit, :update, :destroy]
   # GET /issues
   # GET /issues.json
   def index

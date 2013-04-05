@@ -1,8 +1,10 @@
 <% content_for :page_title do %>
 Editing user
 <% end %>
-<div class="bubble">
-  <%= render 'form' %>
+<div id="content">
+  <div class="bubble">
+    <%= render 'form' %>
+  </div>
+  <%= link_to 'Show', @user %> |
+  <%= link_to 'Back', users_path %>
 </div>
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>

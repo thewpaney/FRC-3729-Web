@@ -1,6 +1,6 @@
 class CalendarController < ApplicationController
   layout "team"
-  
+  before_filter :login_required!, only: [:add_event]
   def index
     @month = (params[:month] || (Time.zone || Time).now.month).to_i
     @year = (params[:year] || (Time.zone || Time).now.year).to_i

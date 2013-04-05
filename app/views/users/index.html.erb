@@ -1,33 +1,34 @@
 <% content_for :page_title do %>
 Listing users
 <% end %>
-
-<div class="bubble">
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Credentials</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @users.each do |user| %>
-  <tr>
-    <td><%= "#{user.first} #{user.last}" %></td>
-    <td><%= user.email %></td>
-    <td><%= user.nice_credentials %></td>
-    <td><%= link_to 'Show', user %></td>
-    <% if !session[:user].nil? and session[:user].admin? %>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    <% end %>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New User', new_user_path %>
+<div id="content">
+  <div class="bubble">
+    <table>
+      <tr>
+	<th>Name</th>
+	<th>Email</th>
+	<th>Credentials</th>
+	<th></th>
+	<th></th>
+	<th></th>
+      </tr>
+      
+      <% @users.each do |user| %>
+      <tr>
+	<td><%= "#{user.first} #{user.last}" %></td>
+	<td><%= user.email %></td>
+	<td><%= user.nice_credentials %></td>
+	<td><%= link_to 'Show', user %></td>
+	<% if !session[:user].nil? and session[:user].admin? %>
+	<td><%= link_to 'Edit', edit_user_path(user) %></td>
+	<td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<% end %>
+      </tr>
+      <% end %>
+    </table>
+    
+    <br />
+    
+    <%= link_to 'New User', new_user_path %>
+  </div>
 </div>

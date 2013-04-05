@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   layout "team"
+  before_filter :login_required!, only: [:create, :new, :edit, :update, :destroy]
   # GET /events
   # GET /events.json
   def index

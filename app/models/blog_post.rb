@@ -3,7 +3,7 @@ class BlogPost < ActiveRecord::Base
   validates :body, presence: true
   validates :title, presence: true
 
-  has_one :user
+  belongs_to :user
 
 
 end

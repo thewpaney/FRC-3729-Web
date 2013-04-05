@@ -1,14 +1,18 @@
 <% content_for :page_title do %>
 Viewing Post
 <% end %>
-
-<p id="notice"><%= notice %></p>
-<h1><%= @blog_post.title%></h1>
-
-<p class="entry">
-  <%= @blog_post.body.html_safe %>
-  <br />
-  <br />
-  <%= link_to 'Edit', edit_blog_post_path(@blog_post) %> |
-  <%= link_to 'To Live Blog', blog_posts_path %>
-</p>
+<div id="content">
+  <p id="notice"><%= notice %></p>
+  <h1><%= @blog_post.title%></h1>
+  
+  <p class="entry">
+    <%= @blog_post.body.html_safe %>
+    <br />
+    <br />
+    <% if session[:user] %>
+    <%= link_to 'Edit', edit_blog_post_path(@blog_post) %> |
+    <% end %>
+    <%= link_to 'To Live Blog', blog_posts_path %>
+  </p>
+  
+</div>

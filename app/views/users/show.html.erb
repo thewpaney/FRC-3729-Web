@@ -2,34 +2,35 @@
 <%= @user.first %>
 <% end %>
 
-
-<div class="bubble">
-  <p id="notice"><%= notice %></p>
-
-  <p>
-    <b>Email:</b>
-    <%= @user.email %>
-  </p>
-
-    <b>First:</b>
-    <%= @user.first %>
-  </p>
-
-  <p>
-    <b>Last:</b>
-    <%= @user.last %>
-  </p>
-
-  <p>
-    <b>Credentials:</b>
-    <%= @user.nice_credentials %>
-  </p>
-
-  <% unless session[:user].nil? %>
-  <% if session[:user].admin? %>
-
-  <%= link_to 'Edit', edit_user_path(@user) %> | 
-  <% end %>
-  <% end %>
-  <%= link_to 'Back', "/" %>
+<div id="content">
+  <div class="bubble">
+    <p id="notice"><%= notice %></p>
+    
+    <p>
+      <b>Email:</b>
+      <%= @user.email %>
+    </p>
+    <p>
+      <b>First:</b>
+      <%= @user.first %>
+    </p>
+    
+    <p>
+      <b>Last:</b>
+      <%= @user.last %>
+    </p>
+    
+    <p>
+      <b>Credentials:</b>
+      <%= @user.nice_credentials %>
+    </p>
+    
+    <% unless session[:user].nil? %>
+    <% if session[:user].admin? %>
+    
+    <%= link_to 'Edit', edit_user_path(@user) %> | 
+    <% end %>
+    <% end %>
+    <%= link_to 'Back', "/" %>
+  </div>
 </div>

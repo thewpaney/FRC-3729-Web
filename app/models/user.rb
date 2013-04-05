@@ -2,6 +2,10 @@ class User < ActiveRecord::Base
   attr_accessible :email, :first, :last, :pass, :credentials
   validates :first, :last, :email, :pass, presence: true
   serialize :credentials, Hash
+
+  def full
+    "#{self.first} #{self.last}"
+  end
   
   def self.authenticate(login, pass)
     where(pass: pass, email: login.downcase).first
@@ -24,6 +28,6 @@ class User < ActiveRecord::Base
     (c = "#{credentials.collect {|c, v| v ? c : nil}.delete_if {|c| c.nil? }.join(', ')}") == "" ? "None!" : c
   end
   
-  belongs_to :blog_post
+  has_many :blog_post
 
 end

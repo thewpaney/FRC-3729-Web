@@ -6,16 +6,10 @@
 </script>
 <div id="sidebar_div">
   <ul id="sidebar_ul">
-    <li><%= link_to "About Us", "/team/about-us" %></li>
-    <li><%= link_to "About FIRST", "/team/about-first" %></li>
-    <li> <%= link_to "Calendar", "/calendar" %></li>
-
+    <li><%= link_to "Blog Feed", "/blog"%></li>
     <% if session[:user] %>
-    <li> <%= link_to "Issues", "/issues" %> </li>
-    <li></li>
-    <% if session[:user].admin? %>
-    <li>Mail</li>
-    <li>Users</li>
+    <% if session[:user].blog_access? %>
+    <li><%= link_to "New Post", "/blog/new" %></li>
     <% end %>
     <br />
     <li> <%= link_to "Sign Out", "/logout" %> </li>

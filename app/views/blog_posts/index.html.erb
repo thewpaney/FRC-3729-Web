@@ -3,22 +3,18 @@
 <% end -%>
 
   <% @blog_posts.reverse.each do |blog_post| %>
-  <div id="blog_entry">  
+  <div id="blog_entry" style="color: #686868;">  
     <h2 class="title"><%= blog_post.title %></h2>
     <%= blog_post.body.html_safe %>
     <br />
     <br />
-    <%= link_to 'Permalink', blog_post %>
+        Posted by <%= blog_post.user.full %> on <%= blog_post.created_at.to_formatted_s(:short) %> | <%= link_to 'Permalink', blog_post %>
     <% if session[:user] and session[:user].blog_access? %>
-    <%= link_to 'Edit', edit_blog_post_path(blog_post) %>
-    <%= link_to 'Destroy', blog_post, method: :delete, data: { confirm: 'Are you sure?' } %>
+    | <%= link_to 'Edit', edit_blog_post_path(blog_post) %>
+    | <%= link_to 'Destroy', blog_post, method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>
-    <br/>
     <br />
-    Posted by (poster name) on <%= blog_post.created_at.to_formatted_s(:short) %>
-    
-    <br/>
-    <br/>
   </div>    
   <% end %>
-
+  
+  

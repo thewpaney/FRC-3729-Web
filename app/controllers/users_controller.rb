@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   layout "team"
-
+  before_filter :login_required!, only: [:create, :new, :edit, :update, :destroy, :show]
   def login
     self.authenticate! params[:user]
     if !session[:user].nil?

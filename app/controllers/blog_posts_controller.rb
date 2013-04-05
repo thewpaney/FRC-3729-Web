@@ -1,5 +1,6 @@
 class BlogPostsController < ApplicationController
   layout "blag"
+  before_filter :login_required!, only: [:create, :new, :edit, :update, :destroy]
   # GET /blog_posts
   # GET /blog_posts.json
   def index
@@ -42,7 +43,7 @@ class BlogPostsController < ApplicationController
   # POST /blog_posts.json
   def create
     @blog_post = BlogPost.new(params[:blog_post])
-
+    @blog_post.user = session[:user]
     respond_to do |format|
       if @blog_post.save
         format.html { redirect_to @blog_post, :notice => 'Blog post was successfully created.' }
