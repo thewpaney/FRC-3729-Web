@@ -28,6 +28,24 @@ class User < ActiveRecord::Base
     (c = "#{credentials.collect {|c, v| v ? c : nil}.delete_if {|c| c.nil? }.join(', ')}") == "" ? "None!" : c
   end
   
+  def attending(event)
+    response = event.attendance[email][0]
+    marked = event.attendance[email][1]
+    (response and not event.past?) or (event.past? and marked)
+  end
+
+  def response(event)
+    response = event.attendance[email][0]
+    if response == false
+      return "Not attending"
+    elsif response == true
+      return "Attending"
+    else
+      return "Hasn't Replied"
+    end
+  end
+
+
   has_many :blog_post
 
 end

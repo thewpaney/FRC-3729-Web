@@ -12,14 +12,22 @@ Viewing Event
 </p>
 
 <p>
-  <b>Attendance:</b>
-  <%= @event.attendance %>
+  <b>Who:</b>
 </p>
 
 <p>
-  <b>Timeframe:</b>
-  <%= "#{@event.start_at.to_s(:pretty)} to #{@event.end_at.to_s(:pretty)}" %>
+  <b>When:</b>
+  <%= "From #{@event.start_at.to_s(:pretty)} to #{@event.end_at.to_s(:pretty)}" %>
 </p>
+
+<% if @event.location %>
+<p>
+  <b>Where:</b>
+  <%= event.location %>
+  
+<p>
+<% end %>
+
 
 </br>
 
