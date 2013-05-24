@@ -13,20 +13,26 @@ Viewing Event
 
 <p>
   <b>Who:</b>
+  <table>
+    <th>
+      <td> Name </td>
+      <td> RSVP </td>
+      <td> Here? </td>
+    </th>
+    <% @event.attendance.keys.each do |email| %>
+    <tr>
+      <td><%= User.find_by_email(email).full %></td>
+      <td><%= @event.attendance[email][0] %></td>
+      <td><%= @event.attendance[email][1] %></td>
+    </tr>
+    <% end %>
+  </table>
 </p>
 
 <p>
   <b>When:</b>
   <%= "From #{@event.start_at.to_s(:pretty)} to #{@event.end_at.to_s(:pretty)}" %>
 </p>
-
-<% if @event.location %>
-<p>
-  <b>Where:</b>
-  <%= event.location %>
-  
-<p>
-<% end %>
 
 
 </br>

@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-  attr_accessible :name, :start_at, :end_at
+  attr_accessible :name, :start_at, :end_at, :location
   serialize :attendance, Hash
   validates :name, presence: true
   validates :start_at, presence: true
@@ -8,6 +8,7 @@ class Event < ActiveRecord::Base
   def to_s
     name
   end
+  after_initialize :set_attendance
 
   # The attendance will be kept with a hash of the user's email to their
   # attendance to the event. The first value in the list is their response to 
