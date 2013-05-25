@@ -10,32 +10,33 @@ Viewing Event
 <p>
   <h3><%= @event.name %></h3>
 </p>
-
-<p>
-  <b>Who:</b>
-  <table>
-    <th>
-      <td> Name </td>
-      <td> RSVP </td>
-      <td> Here? </td>
-    </th>
-    <% @event.attendance.keys.each do |email| %>
-    <tr>
-      <td><%= User.find_by_email(email).full %></td>
-      <td><%= @event.attendance[email][0] %></td>
-      <td><%= @event.attendance[email][1] %></td>
-    </tr>
-    <% end %>
-  </table>
-</p>
-
 <p>
   <b>When:</b>
   <%= "From #{@event.start_at.to_s(:pretty)} to #{@event.end_at.to_s(:pretty)}" %>
 </p>
 
+<p>
+  <b>Attendance:</b>
+<br />
+<br />
+  <table>
+    <tr>
+      <td> <b>Name</b> </td>
+      <td> <b>RSVP</b> </td>
+      <td> <b>Here?</b> </td>
+    </tr>
+    <% @event.attendance.keys.each do |email| %>
+    <% att = @event.attendance[email] %>
+    <tr>
+      <td><%= User.find_by_email(email).full %></td>
+      <td><%= att[0] ? "Yes" :"No" %></td>
+      <td><%= check_box email, att[1] %></td>
+    </tr>
+    <% end %>
+  </table>
+</p>
 
-</br>
+<br />
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'All Events', events_path %> |

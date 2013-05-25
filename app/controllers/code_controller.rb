@@ -1,5 +1,4 @@
 class CodeController < ApplicationController
-  layout 'code'
 
   def show
     # Silence is golden
