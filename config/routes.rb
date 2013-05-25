@@ -51,6 +51,8 @@ RjfrcWeb::Application.routes.draw do
   get '/code/git' => 'code#git'
   # Admin
   get '/admin' => 'admin#index'
-  
+  # E-Mail
+  post '/events/rsvp' => 'events#rsvp'
+
 end
 
