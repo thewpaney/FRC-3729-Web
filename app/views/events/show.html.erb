@@ -1,47 +1,55 @@
 <div id="content">
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
 
-<% content_for :page_title do %>
-Viewing Event
-<% end %>
+  <% content_for :page_title do %>
+  Viewing Event
+  <% end %>
 
-<div class="entry">
+  <div class="entry">
 
-<p>
-  <h3><%= @event.name %></h3>
-</p>
-<p>
-  <b>When:</b>
-  <%= "From #{@event.start_at.to_s(:pretty)} to #{@event.end_at.to_s(:pretty)}" %>
-</p>
+    <p>
+      <h3><%= @event.name %></h3>
+    </p>
+    <p>
+      <b>
+      <%= "From #{@event.start_at.to_s(:pretty)} " %>
+      <br />
+      <%= "Until #{@event.end_at.to_s(:pretty)}" %>
+      </b>
+    </p>
 
-<p>
-  <b>Attendance:</b>
-<br />
-<br />
-  <table>
-    <tr>
-      <td> <b>Name</b> </td>
-      <td> <b>RSVP</b> </td>
-      <td> <b>Here?</b> </td>
-    </tr>
-    <% @event.attendance.keys.each do |email| %>
-    <% att = @event.attendance[email] %>
-    <tr>
-      <td><%= User.find_by_email(email).full %></td>
-      <td><%= att[0] ? "Yes" :"No" %></td>
-      <td><%= check_box email, att[1] %></td>
-    </tr>
+    <p>
+      <b>Attendance:</b>
+      <br />
+      <br />
+      <%= form_tag({:controller => :events, :action => :update_attendance,  :id => @event.id}) do %>
+      <table>
+	<tr>
+	  <td> <b>Name</b> </td>
+	  <td> <b>RSVP</b> </td>
+	  <td> <b>Here?</b> </td>
+	</tr>
+	<% @event.attendance.keys.each do |email| %>
+	<% att = @event.attendance[email] %>
+  	<tr>
+	  <td><%= User.find_by_email(email).full %></td>
+	  <td><%= att[0] ? "Yes" :"No" %></td>
+	  <input name=<%= email %> type="hidden" value=0>
+	  <td><%= check_box_tag(email, 1, att[1]==true) %></td>
+	</tr>
+	<% end %>
+      </table>
+      <br />
+      <%= submit_tag "Update Attendance" %>
+    </p>
     <% end %>
-  </table>
-</p>
 
-<br />
+    <br />
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'All Events', events_path %> |
-<%= link_to 'Calendar', '/calendar' %>
+    <%= link_to 'Edit', edit_event_path(@event) %> |
+    <%= link_to 'All Events', events_path %> |
+    <%= link_to 'Calendar', '/calendar' %>
 
-</div>
-<br />
+  </div>
+  <br />
 </div>

@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   layout "team"
   before_filter :login_required!, only: [:create, :new, :edit, :update, :destroy]
+
   # GET /events
   # GET /events.json
   def index
@@ -23,6 +24,20 @@ class EventsController < ApplicationController
     end
   end
 
+  # POST /event/update
+  def update_attendance
+    @event = Event.find(params[:id])
+    @attendance = Hash.new
+    params.each do |key, value|
+      next unless key.include? "@"
+      @attendance[key] = [@event.attendance[key][0], (value == "1" ? true : false)]
+    end
+    @event.attendance = @attendance
+    @event.save!
+
+    redirect_to "/events/#{params[:id]}"    
+  end
+    
   # GET /events/new
   # GET /events/new.json
   def new

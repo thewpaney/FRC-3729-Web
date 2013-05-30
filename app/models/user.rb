@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
   attr_accessible :email, :first, :last, :pass, :credentials
   validates :first, :last, :email, :pass, presence: true
+  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/, :on => :create
   serialize :credentials, Hash
+
 
   def full
     "#{self.first} #{self.last}"
