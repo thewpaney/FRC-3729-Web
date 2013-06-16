@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Hello!  This is your friendly Sunday robotics digest.</h1>
+    <p>
+      The following events are coming up next week: 
+    </p>
+    <form accept-charset="UTF-8" action="http://robotics.stratosphe.re/events/rsvp" class="events_rsvp" id="events_rsvp" method="post">
+      <div style="margin:0;padding:0;display:inline">
+	<input name="utf8" type="hidden" value="&#x2713;" />
+	<input name="authenticity_token" type="hidden" value="6GFbfkvoBvTAXTQEXU0gJisKcAvbsIgK/aFWoGxzQt8=" />
+	<input id="user_email" name="user[email]" type="hidden" value="<%= @user.email %>">
+      </div>
+      <% @upcoming_events.sort{|a, b| a.start_at <=> b.start_at}.each do |event| %>
+      <p>
+	<h3><%= event.name %> - <%= event.start_at.to_s(:pretty) %></h3>
+	Will you be attending?
+	<%= select("rsvp_#{event.id}", "rsvp", [["No", 0], ["Yes", 1]]) %>
+      </p>
+      <% end %>
+      <%= submit_tag("RSVP to Events") %>
+    </form>
+    <p>
+      Problems?  Questions?  Comments?  Exploits?  Restaurant recommendations?  Send a message to <a href='mailto:dlazzeri1@gmail.com'>the devs</a>.
+    </p>
+  </body>
+</html>

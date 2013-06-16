@@ -97,4 +97,16 @@ class EventsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  # POST /events/rsvp
+  def rsvp
+    @results = Hash.new
+    params.each do |key, value|
+      next unless key =~ /rsvp_[0-9]*/
+      e = Event.find(key.split("_").last)
+      e.attendance[params[:user][:email]][0] = value[:rsvp] == "1" ? 1 : 0
+      e.save!
+      @results[key] = params[key]
+    end
+  end
 end

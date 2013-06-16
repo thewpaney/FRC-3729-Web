@@ -1,0 +1,14 @@
+<div id="content">
+  <p id="notice"><%= notice %></p>
+
+  <% content_for :page_title do %>
+  RSVP to Events
+  <% end %>
+  
+  <%= @results.inspect %>
+  
+  <%= link_to 'All Events', events_path %> |
+  <%= link_to 'Calendar', '/calendar' %>
+  
+  <br />
+</div>
